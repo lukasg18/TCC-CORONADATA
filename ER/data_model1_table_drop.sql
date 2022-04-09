@@ -17,4 +17,3 @@ DROP TABLE public.categoriafatorrisco CASCADE;
 DROP TABLE public.exame CASCADE;
 DROP TABLE public.diagnosticopessoa CASCADE;
 DROP TABLE public.enderecoatendimento CASCADE;
-DROP TABLE public.endereco CASCADE;

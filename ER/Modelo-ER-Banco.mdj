@@ -4486,7 +4486,7 @@
 							},
 							"name": "Nome",
 							"type": "VARCHAR",
-							"length": "20"
+							"length": "30"
 						}
 					]
 				},

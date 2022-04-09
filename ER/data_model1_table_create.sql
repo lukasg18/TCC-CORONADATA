@@ -93,7 +93,7 @@ CREATE INDEX ON public.evolucao
 
 CREATE TABLE public.tipoevolucao (
 	id SERIAL NOT NULL,
-	nome varchar(20) NOT NULL,
+	nome varchar(30) NOT NULL,
 	PRIMARY KEY (id)
 );
 
