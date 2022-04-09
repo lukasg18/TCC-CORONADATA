@@ -1,5 +1,5 @@
 DROP TABLE public.pessoa CASCADE;
-DROP TABLE public.endereco CASCADE;
+DROP TABLE public.enderecoresidencial CASCADE;
 DROP TABLE public.estado CASCADE;
 DROP TABLE public.municipio CASCADE;
 DROP TABLE public.fatorrisco CASCADE;
@@ -16,3 +16,4 @@ DROP TABLE public.grupofatorrisco CASCADE;
 DROP TABLE public.categoriafatorrisco CASCADE;
 DROP TABLE public.exame CASCADE;
 DROP TABLE public.diagnosticopessoa CASCADE;
+DROP TABLE public.enderecoatendimento CASCADE;

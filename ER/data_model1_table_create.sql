@@ -1,42 +1,36 @@
 CREATE TABLE public.pessoa (
-	pessoaid SERIAL NOT NULL,
+	id SERIAL NOT NULL,
 	possuideficiencia boolean NOT NULL,
 	racacorid integer NOT NULL,
 	sexo VARCHAR(20) NOT NULL,
 	idade integer NOT NULL,
 	identificador integer NOT NULL,
-	PRIMARY KEY (pessoaid)
+	PRIMARY KEY (id)
 );
 
 CREATE INDEX ON public.pessoa
 	(racacorid);
 
 
-CREATE TABLE public.endereco (
-	enderecoid SERIAL NOT NULL,
+CREATE TABLE public.enderecoresidencial (
 	municipioid integer NOT NULL,
 	pessoaid integer NOT NULL,
-	PRIMARY KEY (enderecoid)
+	PRIMARY KEY (municipioid, pessoaid)
 );
-
-CREATE INDEX ON public.endereco
-	(municipioid);
-CREATE INDEX ON public.endereco
-	(pessoaid);
 
 
 CREATE TABLE public.estado (
-	estadoid SERIAL NOT NULL,
+	id SERIAL NOT NULL,
 	nome varchar(100) NOT NULL,
-	PRIMARY KEY (estadoid)
+	PRIMARY KEY (id)
 );
 
 
 CREATE TABLE public.municipio (
-	municipioid SERIAL NOT NULL,
+	id SERIAL NOT NULL,
 	nome varchar(100) NOT NULL,
 	estadoid integer NOT NULL,
-	PRIMARY KEY (municipioid)
+	PRIMARY KEY (id)
 );
 
 CREATE INDEX ON public.municipio
@@ -51,10 +45,10 @@ CREATE TABLE public.fatorrisco (
 
 
 CREATE TABLE public.tipofatorrisco (
-	tipofatorriscoid SERIAL NOT NULL,
+	id SERIAL NOT NULL,
 	nome varchar(100) NOT NULL,
 	grupofatorriscoid integer NOT NULL,
-	PRIMARY KEY (tipofatorriscoid)
+	PRIMARY KEY (id)
 );
 
 CREATE INDEX ON public.tipofatorrisco
@@ -70,25 +64,25 @@ CREATE TABLE public.sintomas (
 
 
 CREATE TABLE public.tiposintoma (
-	tiposintomaid SERIAL NOT NULL,
+	id SERIAL NOT NULL,
 	nome varchar(100) NOT NULL,
-	PRIMARY KEY (tiposintomaid)
+	PRIMARY KEY (id)
 );
 
 
 CREATE TABLE public.tipoteste (
-	tipotesteid SERIAL NOT NULL,
+	id SERIAL NOT NULL,
 	nome varchar(50) NOT NULL,
-	PRIMARY KEY (tipotesteid)
+	PRIMARY KEY (id)
 );
 
 
 CREATE TABLE public.evolucao (
-	evolucaoid SERIAL NOT NULL,
+	id SERIAL NOT NULL,
 	dataevolucao timestamp with time zone NOT NULL,
 	pessoaid integer NOT NULL,
 	tipoevolucaoid integer NOT NULL,
-	PRIMARY KEY (evolucaoid)
+	PRIMARY KEY (id)
 );
 
 CREATE INDEX ON public.evolucao
@@ -98,23 +92,23 @@ CREATE INDEX ON public.evolucao
 
 
 CREATE TABLE public.tipoevolucao (
-	tipoevolucaoid SERIAL NOT NULL,
+	id SERIAL NOT NULL,
 	nome varchar(20) NOT NULL,
-	PRIMARY KEY (tipoevolucaoid)
+	PRIMARY KEY (id)
 );
 
 
 CREATE TABLE public.racacor (
-	racacorid SERIAL NOT NULL,
+	id SERIAL NOT NULL,
 	nome varchar(20) NOT NULL,
-	PRIMARY KEY (racacorid)
+	PRIMARY KEY (id)
 );
 
 
 CREATE TABLE public.tiporesultado (
-	tiporesultadoid SERIAL NOT NULL,
+	id SERIAL NOT NULL,
 	nome VARCHAR(20) NOT NULL,
-	PRIMARY KEY (tiporesultadoid)
+	PRIMARY KEY (id)
 );
 
 
@@ -126,10 +120,10 @@ CREATE TABLE public.pessoaracacor (
 
 
 CREATE TABLE public.grupofatorrisco (
-	grupofatorriscoid SERIAL NOT NULL,
+	id SERIAL NOT NULL,
 	nome VARCHAR(50) NOT NULL,
 	categoriafatorriscoid integer NOT NULL,
-	PRIMARY KEY (grupofatorriscoid)
+	PRIMARY KEY (id)
 );
 
 CREATE INDEX ON public.grupofatorrisco
@@ -137,19 +131,19 @@ CREATE INDEX ON public.grupofatorrisco
 
 
 CREATE TABLE public.categoriafatorrisco (
-	categoriafatorriscoid SERIAL NOT NULL,
+	id SERIAL NOT NULL,
 	nome varchar(50) NOT NULL,
-	PRIMARY KEY (categoriafatorriscoid)
+	PRIMARY KEY (id)
 );
 
 
 CREATE TABLE public.exame (
-	exameid SERIAL NOT NULL,
+	id SERIAL NOT NULL,
 	pessoaid integer NOT NULL,
 	tipotesteid integer NOT NULL,
 	dataexame timestamp with time zone NOT NULL,
 	tiporesultadoid integer NOT NULL,
-	PRIMARY KEY (exameid)
+	PRIMARY KEY (id)
 );
 
 CREATE INDEX ON public.exame
@@ -161,11 +155,11 @@ CREATE INDEX ON public.exame
 
 
 CREATE TABLE public.diagnosticopessoa (
-	diagnosticoid SERIAL NOT NULL,
+	id SERIAL NOT NULL,
 	pessoaid integer NOT NULL,
 	tiporesultadoid integer NOT NULL,
 	datadiagnostico timestamp with time zone NOT NULL,
-	PRIMARY KEY (diagnosticoid)
+	PRIMARY KEY (id)
 );
 
 CREATE INDEX ON public.diagnosticopessoa
@@ -174,21 +168,30 @@ CREATE INDEX ON public.diagnosticopessoa
 	(tiporesultadoid);
 
 
-ALTER TABLE public.endereco ADD CONSTRAINT FK_endereco__municipioid FOREIGN KEY (municipioid) REFERENCES public.municipio(municipioid);
-ALTER TABLE public.endereco ADD CONSTRAINT FK_endereco__pessoaid FOREIGN KEY (pessoaid) REFERENCES public.pessoa(pessoaid);
-ALTER TABLE public.municipio ADD CONSTRAINT FK_municipio__estadoid FOREIGN KEY (estadoid) REFERENCES public.estado(estadoid);
-ALTER TABLE public.fatorrisco ADD CONSTRAINT FK_fatorrisco__pessoaid FOREIGN KEY (pessoaid) REFERENCES public.pessoa(pessoaid);
-ALTER TABLE public.fatorrisco ADD CONSTRAINT FK_fatorrisco__tipofatorriscoid FOREIGN KEY (tipofatorriscoid) REFERENCES public.tipofatorrisco(tipofatorriscoid);
-ALTER TABLE public.tipofatorrisco ADD CONSTRAINT FK_tipofatorrisco__grupofatorriscoid FOREIGN KEY (grupofatorriscoid) REFERENCES public.grupofatorrisco(grupofatorriscoid);
-ALTER TABLE public.sintomas ADD CONSTRAINT FK_sintomas__pessoaid FOREIGN KEY (pessoaid) REFERENCES public.pessoa(pessoaid);
-ALTER TABLE public.sintomas ADD CONSTRAINT FK_sintomas__tiposintomaid FOREIGN KEY (tiposintomaid) REFERENCES public.tiposintoma(tiposintomaid);
-ALTER TABLE public.evolucao ADD CONSTRAINT FK_evolucao__pessoaid FOREIGN KEY (pessoaid) REFERENCES public.pessoa(pessoaid);
-ALTER TABLE public.evolucao ADD CONSTRAINT FK_evolucao__tipoevolucaoid FOREIGN KEY (tipoevolucaoid) REFERENCES public.tipoevolucao(tipoevolucaoid);
-ALTER TABLE public.pessoaracacor ADD CONSTRAINT FK_pessoaracacor__pessoaid FOREIGN KEY (pessoaid) REFERENCES public.pessoa(pessoaid);
-ALTER TABLE public.pessoaracacor ADD CONSTRAINT FK_pessoaracacor__racacorid FOREIGN KEY (racacorid) REFERENCES public.racacor(racacorid);
-ALTER TABLE public.grupofatorrisco ADD CONSTRAINT FK_grupofatorrisco__categoriafatorriscoid FOREIGN KEY (categoriafatorriscoid) REFERENCES public.categoriafatorrisco(categoriafatorriscoid);
-ALTER TABLE public.exame ADD CONSTRAINT FK_exame__pessoaid FOREIGN KEY (pessoaid) REFERENCES public.pessoa(pessoaid);
-ALTER TABLE public.exame ADD CONSTRAINT FK_exame__tipotesteid FOREIGN KEY (tipotesteid) REFERENCES public.tipoteste(tipotesteid);
-ALTER TABLE public.exame ADD CONSTRAINT FK_exame__tiporesultadoid FOREIGN KEY (tiporesultadoid) REFERENCES public.tiporesultado(tiporesultadoid);
-ALTER TABLE public.diagnosticopessoa ADD CONSTRAINT FK_diagnosticopessoa__pessoaid FOREIGN KEY (pessoaid) REFERENCES public.pessoa(pessoaid);
-ALTER TABLE public.diagnosticopessoa ADD CONSTRAINT FK_diagnosticopessoa__tiporesultadoid FOREIGN KEY (tiporesultadoid) REFERENCES public.tiporesultado(tiporesultadoid);
+CREATE TABLE public.enderecoatendimento (
+	pessoaid integer NOT NULL,
+	estadoid integer NOT NULL,
+	PRIMARY KEY (pessoaid, estadoid)
+);
+
+
+ALTER TABLE public.enderecoresidencial ADD CONSTRAINT FK_enderecoresidencial__municipioid FOREIGN KEY (municipioid) REFERENCES public.municipio(id);
+ALTER TABLE public.enderecoresidencial ADD CONSTRAINT FK_enderecoresidencial__pessoaid FOREIGN KEY (pessoaid) REFERENCES public.pessoa(id);
+ALTER TABLE public.municipio ADD CONSTRAINT FK_municipio__estadoid FOREIGN KEY (estadoid) REFERENCES public.estado(id);
+ALTER TABLE public.fatorrisco ADD CONSTRAINT FK_fatorrisco__pessoaid FOREIGN KEY (pessoaid) REFERENCES public.pessoa(id);
+ALTER TABLE public.fatorrisco ADD CONSTRAINT FK_fatorrisco__tipofatorriscoid FOREIGN KEY (tipofatorriscoid) REFERENCES public.tipofatorrisco(id);
+ALTER TABLE public.tipofatorrisco ADD CONSTRAINT FK_tipofatorrisco__grupofatorriscoid FOREIGN KEY (grupofatorriscoid) REFERENCES public.grupofatorrisco(id);
+ALTER TABLE public.sintomas ADD CONSTRAINT FK_sintomas__pessoaid FOREIGN KEY (pessoaid) REFERENCES public.pessoa(id);
+ALTER TABLE public.sintomas ADD CONSTRAINT FK_sintomas__tiposintomaid FOREIGN KEY (tiposintomaid) REFERENCES public.tiposintoma(id);
+ALTER TABLE public.evolucao ADD CONSTRAINT FK_evolucao__pessoaid FOREIGN KEY (pessoaid) REFERENCES public.pessoa(id);
+ALTER TABLE public.evolucao ADD CONSTRAINT FK_evolucao__tipoevolucaoid FOREIGN KEY (tipoevolucaoid) REFERENCES public.tipoevolucao(id);
+ALTER TABLE public.pessoaracacor ADD CONSTRAINT FK_pessoaracacor__pessoaid FOREIGN KEY (pessoaid) REFERENCES public.pessoa(id);
+ALTER TABLE public.pessoaracacor ADD CONSTRAINT FK_pessoaracacor__racacorid FOREIGN KEY (racacorid) REFERENCES public.racacor(id);
+ALTER TABLE public.grupofatorrisco ADD CONSTRAINT FK_grupofatorrisco__categoriafatorriscoid FOREIGN KEY (categoriafatorriscoid) REFERENCES public.categoriafatorrisco(id);
+ALTER TABLE public.exame ADD CONSTRAINT FK_exame__pessoaid FOREIGN KEY (pessoaid) REFERENCES public.pessoa(id);
+ALTER TABLE public.exame ADD CONSTRAINT FK_exame__tipotesteid FOREIGN KEY (tipotesteid) REFERENCES public.tipoteste(id);
+ALTER TABLE public.exame ADD CONSTRAINT FK_exame__tiporesultadoid FOREIGN KEY (tiporesultadoid) REFERENCES public.tiporesultado(id);
+ALTER TABLE public.diagnosticopessoa ADD CONSTRAINT FK_diagnosticopessoa__pessoaid FOREIGN KEY (pessoaid) REFERENCES public.pessoa(id);
+ALTER TABLE public.diagnosticopessoa ADD CONSTRAINT FK_diagnosticopessoa__tiporesultadoid FOREIGN KEY (tiporesultadoid) REFERENCES public.tiporesultado(id);
+ALTER TABLE public.enderecoatendimento ADD CONSTRAINT FK_enderecoatendimento__pessoaid FOREIGN KEY (pessoaid) REFERENCES public.pessoa(id);
+ALTER TABLE public.enderecoatendimento ADD CONSTRAINT FK_enderecoatendimento__estadoid FOREIGN KEY (estadoid) REFERENCES public.estado(id);
