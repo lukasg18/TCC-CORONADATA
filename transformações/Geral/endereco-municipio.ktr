@@ -1686,41 +1686,13 @@ var municipioResult = Nome_Município.replace(/[\u0300-\u036f]/g, "");
       <schema_name/>
     </partitioning>
     <fields>
-      <select_unspecified>N</select_unspecified>
-      <meta>
-        <name>estadoid</name>
-        <rename>id</rename>
-        <type>Integer</type>
-        <length>9</length>
-        <precision>0</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>
-      <meta>
+      <field>
+        <name>id</name>
+      </field>
+      <field>
         <name>nome</name>
-        <rename>nome</rename>
-        <type>String</type>
-        <length>100</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>
+      </field>
+      <select_unspecified>N</select_unspecified>
     </fields>
     <attributes/>
     <cluster_schema/>
@@ -2657,7 +2629,7 @@ var municipioResult = Nome_Município.replace(/[\u0300-\u036f]/g, "");
       <schema_name/>
     </partitioning>
     <connection>coronadata</connection>
-    <sql>SELECT * FROM estado</sql>
+    <sql>SELECT id, nome FROM estado</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -2668,11 +2640,11 @@ var municipioResult = Nome_Município.replace(/[\u0300-\u036f]/g, "");
       <value-meta>
         <type>Integer</type>
         <storagetype>normal</storagetype>
-        <name>estadoid</name>
+        <name>id</name>
         <length>9</length>
         <precision>0</precision>
-        <origin>Table input</origin>
-        <comments>estadoid</comments>
+        <origin>Tabela estados</origin>
+        <comments>id</comments>
         <conversion_Mask>####0;-####0</conversion_Mask>
         <decimal_symbol>,</decimal_symbol>
         <grouping_symbol>.</grouping_symbol>
@@ -2694,7 +2666,7 @@ var municipioResult = Nome_Município.replace(/[\u0300-\u036f]/g, "");
         <name>nome</name>
         <length>100</length>
         <precision>-1</precision>
-        <origin>Table input</origin>
+        <origin>Tabela estados</origin>
         <comments>nome</comments>
         <conversion_Mask/>
         <decimal_symbol>,</decimal_symbol>
