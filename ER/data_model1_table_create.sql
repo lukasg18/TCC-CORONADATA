@@ -1,15 +1,10 @@
 CREATE TABLE public.pessoa (
 	id SERIAL NOT NULL,
-	possuideficiencia boolean NOT NULL,
-	racacorid integer NOT NULL,
 	sexo VARCHAR(20) NOT NULL,
 	idade integer NOT NULL,
 	identificador integer NOT NULL,
 	PRIMARY KEY (id)
 );
-
-CREATE INDEX ON public.pessoa
-	(racacorid);
 
 
 CREATE TABLE public.enderecoresidencial (

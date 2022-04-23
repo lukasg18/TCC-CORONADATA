@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>categoria-fator-risco</name>
+    <name>tipo-sintoma</name>
     <description/>
     <extended_description/>
     <trans_version/>
@@ -427,10 +427,10 @@
     <clusterschemas>
     </clusterschemas>
     <created_user>-</created_user>
-    <created_date>2022/04/09 19:34:03.574</created_date>
+    <created_date>2022/04/23 14:53:29.234</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2022/04/09 19:34:03.574</modified_date>
-    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
+    <modified_date>2022/04/23 14:53:29.234</modified_date>
+    <key_for_session_key/>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
@@ -488,18 +488,33 @@
   </connection>
   <order>
     <hop>
-      <from>CSV file input</from>
-      <to>String operations</to>
+      <from>ES</from>
+      <to>Select values</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>String operations</from>
+      <from>Select values</from>
+      <to>Row normaliser</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Row normaliser</from>
+      <to>Sort rows</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Sort rows</from>
+      <to>Group by</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Group by</from>
       <to>Insert / update</to>
       <enabled>Y</enabled>
     </hop>
   </order>
   <step>
-    <name>CSV file input</name>
+    <name>ES</name>
     <type>CsvInput</type>
     <description/>
     <distribute>Y</distribute>
@@ -509,11 +524,11 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <filename>C:\Users\LucasGomesFlegler\Documents\TCC\planilhas\Entrada de dados\Grupo comobirdade\grupo-comobiradade.csv</filename>
+    <filename>C:\Users\LucasGomesFlegler\Documents\TCC\planilhas\saida identificador\ES-IDENTIFICADOR.csv</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
-    <separator>,</separator>
+    <separator>;</separator>
     <enclosure>"</enclosure>
     <header>Y</header>
     <buffer_size>50000</buffer_size>
@@ -522,16 +537,82 @@
     <parallel>N</parallel>
     <newline_possible>N</newline_possible>
     <format>mixed</format>
-    <encoding/>
+    <encoding>UTF-8</encoding>
     <fields>
       <field>
-        <name>nome_grupo</name>
+        <name>Febre</name>
         <type>String</type>
         <format/>
         <currency>R$</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>28</length>
+        <length>3</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>DificuldadeRespiratoria</name>
+        <type>String</type>
+        <format/>
+        <currency>R$</currency>
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>3</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>Tosse</name>
+        <type>String</type>
+        <format/>
+        <currency>R$</currency>
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>3</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>Coriza</name>
+        <type>String</type>
+        <format/>
+        <currency>R$</currency>
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>3</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>DorGarganta</name>
+        <type>String</type>
+        <format/>
+        <currency>R$</currency>
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>3</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>Diarreia</name>
+        <type>String</type>
+        <format/>
+        <currency>R$</currency>
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>3</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>Cefaleia</name>
+        <type>String</type>
+        <format/>
+        <currency>R$</currency>
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>3</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -545,8 +626,209 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>160</xloc>
-      <yloc>112</yloc>
+      <xloc>224</xloc>
+      <yloc>224</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Row normaliser</name>
+    <type>Normaliser</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <typefield>SINTOMAS</typefield>
+    <fields>
+      <field>
+        <name>FEBRE</name>
+        <value>FEBRE</value>
+        <norm>TESTE</norm>
+      </field>
+      <field>
+        <name>DIFICULDADE RESPIRATORIA</name>
+        <value>DIFICULDADE RESPIRATORIA</value>
+        <norm>TESTE</norm>
+      </field>
+      <field>
+        <name>TOSSE</name>
+        <value>TOSSE</value>
+        <norm>TESTE</norm>
+      </field>
+      <field>
+        <name>CORIZA</name>
+        <value>CORIZA</value>
+        <norm>TESTE</norm>
+      </field>
+      <field>
+        <name>DOR GARGANTA</name>
+        <value>DOR GARGANTA</value>
+        <norm>TESTE</norm>
+      </field>
+      <field>
+        <name>DIARREIA</name>
+        <value>DIARREIA</value>
+        <norm>TESTE</norm>
+      </field>
+      <field>
+        <name>CEFALEIA</name>
+        <value>CEFALEIA</value>
+        <norm>TESTE</norm>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>560</xloc>
+      <yloc>224</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Select values</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>Febre</name>
+        <rename>FEBRE</rename>
+      </field>
+      <field>
+        <name>DificuldadeRespiratoria</name>
+        <rename>DIFICULDADE RESPIRATORIA</rename>
+      </field>
+      <field>
+        <name>Tosse</name>
+        <rename>TOSSE</rename>
+      </field>
+      <field>
+        <name>Coriza</name>
+        <rename>CORIZA</rename>
+      </field>
+      <field>
+        <name>DorGarganta</name>
+        <rename>DOR GARGANTA</rename>
+      </field>
+      <field>
+        <name>Diarreia</name>
+        <rename>DIARREIA</rename>
+      </field>
+      <field>
+        <name>Cefaleia</name>
+        <rename>CEFALEIA</rename>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>384</xloc>
+      <yloc>224</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Sort rows</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <directory>%%java.io.tmpdir%%</directory>
+    <prefix>out</prefix>
+    <sort_size>1000000</sort_size>
+    <free_memory/>
+    <compress>N</compress>
+    <compress_variable/>
+    <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>SINTOMAS</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>704</xloc>
+      <yloc>224</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Group by</name>
+    <type>GroupBy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <all_rows>N</all_rows>
+    <ignore_aggregate>N</ignore_aggregate>
+    <field_ignore/>
+    <directory>%%java.io.tmpdir%%</directory>
+    <prefix>grp</prefix>
+    <add_linenr>N</add_linenr>
+    <linenr_fieldname/>
+    <give_back_row>N</give_back_row>
+    <group>
+      <field>
+        <name>SINTOMAS</name>
+      </field>
+    </group>
+    <fields>
+      </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>848</xloc>
+      <yloc>224</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -566,16 +848,16 @@
     <update_bypassed>N</update_bypassed>
     <lookup>
       <schema>public</schema>
-      <table>categoriafatorrisco</table>
+      <table>tiposintoma</table>
       <key>
-        <name>nome_grupo</name>
+        <name>SINTOMAS</name>
         <field>nome</field>
         <condition>LIKE</condition>
         <name2/>
       </key>
       <value>
         <name>nome</name>
-        <rename>nome_grupo</rename>
+        <rename>SINTOMAS</rename>
         <update>Y</update>
       </value>
     </lookup>
@@ -588,48 +870,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>528</xloc>
-      <yloc>112</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>String operations</name>
-    <type>StringOperations</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <fields>
-      <field>
-        <in_stream_name>nome_grupo</in_stream_name>
-        <out_stream_name/>
-        <trim_type/>
-        <lower_upper>upper</lower_upper>
-        <padding_type/>
-        <pad_char/>
-        <pad_len/>
-        <init_cap/>
-        <mask_xml/>
-        <digits/>
-        <remove_special_characters/>
-      </field>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>336</xloc>
-      <yloc>112</yloc>
+      <xloc>992</xloc>
+      <yloc>224</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
