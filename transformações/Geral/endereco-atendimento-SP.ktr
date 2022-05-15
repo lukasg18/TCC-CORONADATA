@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>pessoa-endereco-residencia-MGktr</name>
+    <name>endereco-atendimento-SP</name>
     <description/>
     <extended_description/>
     <trans_version/>
@@ -427,10 +427,10 @@
     <clusterschemas>
     </clusterschemas>
     <created_user>-</created_user>
-    <created_date>2022/05/05 17:44:32.518</created_date>
+    <created_date>2022/05/15 17:03:49.759</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2022/05/05 17:44:32.518</modified_date>
-    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
+    <modified_date>2022/05/15 17:03:49.759</modified_date>
+    <key_for_session_key/>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
@@ -488,43 +488,28 @@
   </connection>
   <order>
     <hop>
-      <from>COVID-MG</from>
-      <to>Select values 5</to>
+      <from>COVID-SP</from>
+      <to>Select values</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Group by 4</from>
-      <to>Sort rows 3 3</to>
+      <from>Group by</from>
+      <to>Sort rows 3</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Merge join 3</from>
-      <to>Sort rows 8 3</to>
+      <from>Merge join</from>
+      <to>Sort rows 4</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Merge join 4 3</from>
-      <to>Insert / update 3</to>
+      <from>Merge join 2</from>
+      <to>Insert / update</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Select values 5</from>
-      <to>Sort rows 5</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Sort rows 3 3</from>
-      <to>Merge join 3</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Sort rows 5</from>
-      <to>Group by 4</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Sort rows 8 3</from>
-      <to>Merge join 4 3</to>
+      <from>Select values</from>
+      <to>Sort rows</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
@@ -533,13 +518,38 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Tabela Municipios</from>
-      <to>Select values 2</to>
+      <from>Select values 2 2</from>
+      <to>Sort rows 2 2</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Select values 2 2</from>
-      <to>Sort rows 2 2</to>
+      <from>Sort rows</from>
+      <to>Group by</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Sort rows 2</from>
+      <to>Merge join</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Sort rows 2 2</from>
+      <to>Merge join 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Sort rows 3</from>
+      <to>Merge join</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Sort rows 4</from>
+      <to>Merge join 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Tabela Municipios</from>
+      <to>Select values 2</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
@@ -547,19 +557,9 @@
       <to>Select values 2 2</to>
       <enabled>Y</enabled>
     </hop>
-    <hop>
-      <from>Sort rows 2</from>
-      <to>Merge join 3</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Sort rows 2 2</from>
-      <to>Merge join 4 3</to>
-      <enabled>Y</enabled>
-    </hop>
   </order>
   <step>
-    <name>COVID-MG</name>
+    <name>COVID-SP</name>
     <type>CsvInput</type>
     <description/>
     <distribute>Y</distribute>
@@ -569,7 +569,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <filename>C:\Users\LucasGomesFlegler\Documents\TCC\planilhas\saida identificador\MG-IDENTIFICADOR.csv</filename>
+    <filename>C:\Users\LucasGomesFlegler\Documents\TCC\planilhas\saida identificador\SP-IDENTIFICADOR.csv</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
@@ -584,17 +584,6 @@
     <format>mixed</format>
     <encoding>UTF-8</encoding>
     <fields>
-      <field>
-        <name>MUNICIPIO_RESIDENCIA</name>
-        <type>String</type>
-        <format/>
-        <currency>R$</currency>
-        <decimal>,</decimal>
-        <group>.</group>
-        <length>22</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
       <field>
         <name>identificador</name>
         <type>Integer</type>
@@ -613,7 +602,7 @@
         <currency>R$</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>12</length>
+        <length>-1</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -627,13 +616,13 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>288</xloc>
-      <yloc>160</yloc>
+      <xloc>80</xloc>
+      <yloc>128</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>Group by 4</name>
+    <name>Group by</name>
     <type>GroupBy</type>
     <description/>
     <distribute>Y</distribute>
@@ -653,9 +642,6 @@
     <give_back_row>N</give_back_row>
     <group>
       <field>
-        <name>municipioMG</name>
-      </field>
-      <field>
         <name>UF</name>
       </field>
       <field>
@@ -673,13 +659,13 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>672</xloc>
-      <yloc>160</yloc>
+      <xloc>400</xloc>
+      <yloc>128</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>Insert / update 3</name>
+    <name>Insert / update</name>
     <type>InsertUpdate</type>
     <description/>
     <distribute>Y</distribute>
@@ -694,22 +680,22 @@
     <update_bypassed>N</update_bypassed>
     <lookup>
       <schema>public</schema>
-      <table>enderecoresidencial</table>
-      <key>
-        <name>idmunicipio</name>
-        <field>municipioid</field>
-        <condition>=</condition>
-        <name2/>
-      </key>
+      <table>enderecoatendimento</table>
       <key>
         <name>pessoaid</name>
         <field>pessoaid</field>
         <condition>=</condition>
         <name2/>
       </key>
+      <key>
+        <name>estadoid</name>
+        <field>estadoid</field>
+        <condition>=</condition>
+        <name2/>
+      </key>
       <value>
-        <name>municipioid</name>
-        <rename>idmunicipio</rename>
+        <name>estadoid</name>
+        <rename>estadoid</rename>
         <update>Y</update>
       </value>
       <value>
@@ -727,13 +713,13 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1440</xloc>
-      <yloc>320</yloc>
+      <xloc>1136</xloc>
+      <yloc>176</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>Merge join 3</name>
+    <name>Merge join</name>
     <type>MergeJoin</type>
     <description/>
     <distribute>Y</distribute>
@@ -744,13 +730,13 @@
       <schema_name/>
     </partitioning>
     <join_type>INNER</join_type>
-    <step1>Sort rows 3 3</step1>
+    <step1>Sort rows 3</step1>
     <step2>Sort rows 2</step2>
     <keys_1>
-      <key>municipioMG</key>
+      <key>UF</key>
     </keys_1>
     <keys_2>
-      <key>nome</key>
+      <key>nomedata</key>
     </keys_2>
     <attributes/>
     <cluster_schema/>
@@ -761,13 +747,13 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>960</xloc>
-      <yloc>224</yloc>
+      <xloc>656</xloc>
+      <yloc>176</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>Merge join 4 3</name>
+    <name>Merge join 2</name>
     <type>MergeJoin</type>
     <description/>
     <distribute>Y</distribute>
@@ -778,13 +764,13 @@
       <schema_name/>
     </partitioning>
     <join_type>INNER</join_type>
-    <step1>Sort rows 8 3</step1>
-    <step2>Sort rows 2 2</step2>
+    <step1>Sort rows 2 2</step1>
+    <step2>Sort rows 4</step2>
     <keys_1>
-      <key>identificador</key>
+      <key>codplanilha</key>
     </keys_1>
     <keys_2>
-      <key>codplanilha</key>
+      <key>identificador</key>
     </keys_2>
     <attributes/>
     <cluster_schema/>
@@ -795,8 +781,42 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1280</xloc>
-      <yloc>320</yloc>
+      <xloc>928</xloc>
+      <yloc>176</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Select values</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>UF</name>
+      </field>
+      <field>
+        <name>identificador</name>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>208</xloc>
+      <yloc>128</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -813,11 +833,10 @@
     </partitioning>
     <fields>
       <field>
-        <name>id</name>
-        <rename>idmunicipio</rename>
+        <name>estadoid</name>
       </field>
       <field>
-        <name>nome</name>
+        <name>nomedata</name>
       </field>
       <select_unspecified>N</select_unspecified>
     </fields>
@@ -830,13 +849,13 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>608</xloc>
-      <yloc>288</yloc>
+      <xloc>384</xloc>
+      <yloc>240</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>Select values 5</name>
+    <name>Select values 2 2</name>
     <type>SelectValues</type>
     <description/>
     <distribute>Y</distribute>
@@ -848,16 +867,17 @@
     </partitioning>
     <fields>
       <field>
-        <name>MUNICIPIO_RESIDENCIA</name>
-        <rename>municipioMG</rename>
+        <name>id</name>
+        <rename>pessoaid</rename>
       </field>
       <field>
-        <name>UF</name>
-        <rename/>
+        <name>sexoid</name>
       </field>
       <field>
-        <name>identificador</name>
-        <rename/>
+        <name>idade</name>
+      </field>
+      <field>
+        <name>codplanilha</name>
       </field>
       <select_unspecified>N</select_unspecified>
     </fields>
@@ -870,8 +890,50 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>432</xloc>
-      <yloc>160</yloc>
+      <xloc>640</xloc>
+      <yloc>336</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Sort rows</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <directory>%%java.io.tmpdir%%</directory>
+    <prefix>out</prefix>
+    <sort_size>1000000</sort_size>
+    <free_memory/>
+    <compress>N</compress>
+    <compress_variable/>
+    <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>UF</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>304</xloc>
+      <yloc>128</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -895,7 +957,7 @@
     <unique_rows>N</unique_rows>
     <fields>
       <field>
-        <name>nome</name>
+        <name>nomedata</name>
         <ascending>Y</ascending>
         <case_sensitive>N</case_sensitive>
         <collator_enabled>N</collator_enabled>
@@ -912,259 +974,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>784</xloc>
-      <yloc>288</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Sort rows 3 3</name>
-    <type>SortRows</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <directory>%%java.io.tmpdir%%</directory>
-    <prefix>out</prefix>
-    <sort_size>1000000</sort_size>
-    <free_memory/>
-    <compress>N</compress>
-    <compress_variable/>
-    <unique_rows>N</unique_rows>
-    <fields>
-      <field>
-        <name>municipioMG</name>
-        <ascending>Y</ascending>
-        <case_sensitive>N</case_sensitive>
-        <collator_enabled>N</collator_enabled>
-        <collator_strength>0</collator_strength>
-        <presorted>N</presorted>
-      </field>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>784</xloc>
-      <yloc>160</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Sort rows 5</name>
-    <type>SortRows</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <directory>%%java.io.tmpdir%%</directory>
-    <prefix>out</prefix>
-    <sort_size>1000000</sort_size>
-    <free_memory/>
-    <compress>N</compress>
-    <compress_variable/>
-    <unique_rows>N</unique_rows>
-    <fields>
-      <field>
-        <name>municipioMG</name>
-        <ascending>Y</ascending>
-        <case_sensitive>N</case_sensitive>
-        <collator_enabled>N</collator_enabled>
-        <collator_strength>0</collator_strength>
-        <presorted>N</presorted>
-      </field>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>560</xloc>
-      <yloc>160</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Sort rows 8 3</name>
-    <type>SortRows</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <directory>%%java.io.tmpdir%%</directory>
-    <prefix>out</prefix>
-    <sort_size>1000000</sort_size>
-    <free_memory/>
-    <compress>N</compress>
-    <compress_variable/>
-    <unique_rows>N</unique_rows>
-    <fields>
-      <field>
-        <name>identificador</name>
-        <ascending>Y</ascending>
-        <case_sensitive>N</case_sensitive>
-        <collator_enabled>N</collator_enabled>
-        <collator_strength>0</collator_strength>
-        <presorted>N</presorted>
-      </field>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>1104</xloc>
-      <yloc>224</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Tabela Municipios</name>
-    <type>TableInput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <connection>coronadata</connection>
-    <sql>SELECT id, nome FROM municipio</sql>
-    <limit>0</limit>
-    <lookup/>
-    <execute_each_row>N</execute_each_row>
-    <variables_active>N</variables_active>
-    <lazy_conversion_active>N</lazy_conversion_active>
-    <cached_row_meta_active>N</cached_row_meta_active>
-    <row-meta>
-      <value-meta>
-        <type>Integer</type>
-        <storagetype>normal</storagetype>
-        <name>id</name>
-        <length>9</length>
-        <precision>0</precision>
-        <origin>Tabela Municipios</origin>
-        <comments>id</comments>
-        <conversion_Mask>####0;-####0</conversion_Mask>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>pt_BR</date_format_locale>
-        <date_format_timezone>America/Sao_Paulo</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-      <value-meta>
-        <type>String</type>
-        <storagetype>normal</storagetype>
-        <name>nome</name>
-        <length>100</length>
-        <precision>-1</precision>
-        <origin>Tabela Municipios</origin>
-        <comments>nome</comments>
-        <conversion_Mask/>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>pt_BR</date_format_locale>
-        <date_format_timezone>America/Sao_Paulo</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-    </row-meta>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>432</xloc>
-      <yloc>288</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Select values 2 2</name>
-    <type>SelectValues</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <fields>
-      <field>
-        <name>id</name>
-        <rename>pessoaid</rename>
-      </field>
-      <field>
-        <name>sexoid</name>
-        <rename/>
-      </field>
-      <field>
-        <name>idade</name>
-        <rename/>
-      </field>
-      <field>
-        <name>codplanilha</name>
-        <rename/>
-      </field>
-      <select_unspecified>N</select_unspecified>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>976</xloc>
-      <yloc>416</yloc>
+      <xloc>496</xloc>
+      <yloc>240</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1205,8 +1016,173 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1120</xloc>
-      <yloc>416</yloc>
+      <xloc>752</xloc>
+      <yloc>336</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Sort rows 3</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <directory>%%java.io.tmpdir%%</directory>
+    <prefix>out</prefix>
+    <sort_size>1000000</sort_size>
+    <free_memory/>
+    <compress>N</compress>
+    <compress_variable/>
+    <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>UF</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>512</xloc>
+      <yloc>128</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Sort rows 4</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <directory>%%java.io.tmpdir%%</directory>
+    <prefix>out</prefix>
+    <sort_size>1000000</sort_size>
+    <free_memory/>
+    <compress>N</compress>
+    <compress_variable/>
+    <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>identificador</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>768</xloc>
+      <yloc>176</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Tabela Municipios</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>coronadata</connection>
+    <sql>SELECT id as estadoid, nome as nomeData FROM estado</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cached_row_meta_active>N</cached_row_meta_active>
+    <row-meta>
+      <value-meta>
+        <type>Integer</type>
+        <storagetype>normal</storagetype>
+        <name>estadoid</name>
+        <length>9</length>
+        <precision>0</precision>
+        <origin>Tabela Municipios</origin>
+        <comments>estadoid</comments>
+        <conversion_Mask>####0;-####0</conversion_Mask>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>pt_BR</date_format_locale>
+        <date_format_timezone>America/Sao_Paulo</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>String</type>
+        <storagetype>normal</storagetype>
+        <name>nomedata</name>
+        <length>100</length>
+        <precision>-1</precision>
+        <origin>Tabela Municipios</origin>
+        <comments>nomedata</comments>
+        <conversion_Mask/>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>pt_BR</date_format_locale>
+        <date_format_timezone>America/Sao_Paulo</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+    </row-meta>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>240</xloc>
+      <yloc>240</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1332,8 +1308,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>832</xloc>
-      <yloc>416</yloc>
+      <xloc>496</xloc>
+      <yloc>336</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
