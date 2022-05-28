@@ -310,13 +310,13 @@
       <attributes_kjc/>
     </entry>
     <entry>
-      <name>inserindo identificador</name>
+      <name>Inserindo identificador</name>
       <description/>
       <type>TRANS</type>
       <attributes/>
       <specification_method>filename</specification_method>
       <trans_object_id/>
-      <filename>C:/Users/LucasGomesFlegler/Documents/TCC/transformações/Tratamento prévio/Inserindo-identificador.ktr</filename>
+      <filename>${Internal.Entry.Current.Directory}/Tratamento prévio/Inserindo-identificador.ktr</filename>
       <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -349,7 +349,7 @@
       <attributes_kjc/>
     </entry>
     <entry>
-      <name>tabela estados</name>
+      <name>Estados</name>
       <description/>
       <type>TRANS</type>
       <attributes/>
@@ -383,12 +383,12 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>192</xloc>
+      <xloc>224</xloc>
       <yloc>112</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
-      <name>tabela municipios</name>
+      <name>Endereco municipio</name>
       <description/>
       <type>TRANS</type>
       <attributes/>
@@ -427,7 +427,7 @@
       <attributes_kjc/>
     </entry>
     <entry>
-      <name>junta planilhas MG</name>
+      <name>Junta planilhas MG</name>
       <description/>
       <type>TRANS</type>
       <attributes/>
@@ -466,7 +466,7 @@
       <attributes_kjc/>
     </entry>
     <entry>
-      <name>tabela raca cor</name>
+      <name>Tabela raca cor</name>
       <description/>
       <type>TRANS</type>
       <attributes/>
@@ -505,13 +505,13 @@
       <attributes_kjc/>
     </entry>
     <entry>
-      <name>Categoria Fator Risco</name>
+      <name>Grupo Comonirdade</name>
       <description/>
       <type>TRANS</type>
       <attributes/>
       <specification_method>filename</specification_method>
       <trans_object_id/>
-      <filename>${Internal.Entry.Current.Directory}/Geral/categoria-fator-risco.ktr</filename>
+      <filename>${Internal.Entry.Current.Directory}/Geral/grupo-comobirdade.ktr</filename>
       <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -656,7 +656,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1024</xloc>
+      <xloc>1152</xloc>
       <yloc>224</yloc>
       <attributes_kjc/>
     </entry>
@@ -695,12 +695,12 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>896</xloc>
+      <xloc>1024</xloc>
       <yloc>224</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
-      <name>PessoaES</name>
+      <name>Pessoa ES</name>
       <description/>
       <type>TRANS</type>
       <attributes/>
@@ -734,12 +734,12 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>608</xloc>
+      <xloc>752</xloc>
       <yloc>224</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
-      <name>PessoaMG</name>
+      <name>Pessoa MG</name>
       <description/>
       <type>TRANS</type>
       <attributes/>
@@ -773,12 +773,12 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>480</xloc>
+      <xloc>608</xloc>
       <yloc>224</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
-      <name>PessoaSP</name>
+      <name>Pessoa GO</name>
       <description/>
       <type>TRANS</type>
       <attributes/>
@@ -812,7 +812,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>352</xloc>
+      <xloc>480</xloc>
       <yloc>224</yloc>
       <attributes_kjc/>
     </entry>
@@ -851,12 +851,12 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>752</xloc>
+      <xloc>896</xloc>
       <yloc>224</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
-      <name>endereco-residencia-ES</name>
+      <name>Endereco residencia ES</name>
       <description/>
       <type>TRANS</type>
       <attributes/>
@@ -895,7 +895,7 @@
       <attributes_kjc/>
     </entry>
     <entry>
-      <name>endereco-residencia-MG</name>
+      <name>Endereco residencia MG</name>
       <description/>
       <type>TRANS</type>
       <attributes/>
@@ -929,12 +929,12 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>224</xloc>
+      <xloc>80</xloc>
       <yloc>336</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
-      <name>endereco-residencia-SP</name>
+      <name>endereco residencia GO</name>
       <description/>
       <type>TRANS</type>
       <attributes/>
@@ -968,12 +968,12 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>96</xloc>
+      <xloc>80</xloc>
       <yloc>224</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
-      <name>endereco-atendimento-MG</name>
+      <name>Endereco atendimento MG</name>
       <description/>
       <type>TRANS</type>
       <attributes/>
@@ -1007,12 +1007,12 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>752</xloc>
+      <xloc>560</xloc>
       <yloc>336</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
-      <name>endereco-atendimento-SP</name>
+      <name>Endereco atendimento SP</name>
       <description/>
       <type>TRANS</type>
       <attributes/>
@@ -1046,12 +1046,12 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>560</xloc>
+      <xloc>384</xloc>
       <yloc>336</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
-      <name>endereco-atendimento-ES</name>
+      <name>Endereco atendimento ES</name>
       <description/>
       <type>TRANS</type>
       <attributes/>
@@ -1085,15 +1085,54 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>384</xloc>
+      <xloc>224</xloc>
       <yloc>336</yloc>
+      <attributes_kjc/>
+    </entry>
+    <entry>
+      <name>Pessoa BA</name>
+      <description/>
+      <type>TRANS</type>
+      <attributes/>
+      <specification_method>filename</specification_method>
+      <trans_object_id/>
+      <filename>${Internal.Entry.Current.Directory}/Geral/pessoa-BA.ktr</filename>
+      <transname/>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <clear_rows>N</clear_rows>
+      <clear_files>N</clear_files>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Basic</loglevel>
+      <cluster>N</cluster>
+      <slave_server_name/>
+      <set_append_logfile>N</set_append_logfile>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <create_parent_folder>N</create_parent_folder>
+      <logging_remote_work>N</logging_remote_work>
+      <run_configuration>Pentaho local</run_configuration>
+      <suppress_result_data>N</suppress_result_data>
+      <parameters>
+        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>352</xloc>
+      <yloc>224</yloc>
       <attributes_kjc/>
     </entry>
   </entries>
   <hops>
     <hop>
       <from>Start</from>
-      <to>tabela estados</to>
+      <to>Estados</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -1102,7 +1141,7 @@
     </hop>
     <hop>
       <from>Start</from>
-      <to>junta planilhas MG</to>
+      <to>Junta planilhas MG</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -1110,8 +1149,8 @@
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>junta planilhas MG</from>
-      <to>inserindo identificador</to>
+      <from>Junta planilhas MG</from>
+      <to>Inserindo identificador</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -1119,8 +1158,8 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>tabela municipios</from>
-      <to>tabela raca cor</to>
+      <from>Endereco municipio</from>
+      <to>Tabela raca cor</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -1128,8 +1167,8 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>inserindo identificador</from>
-      <to>tabela municipios</to>
+      <from>Inserindo identificador</from>
+      <to>Endereco municipio</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -1137,7 +1176,7 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>tabela raca cor</from>
+      <from>Tabela raca cor</from>
       <to>Tipo Evolucao</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -1173,8 +1212,8 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>tabela estados</from>
-      <to>Categoria Fator Risco</to>
+      <from>Estados</from>
+      <to>Grupo Comonirdade</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -1191,8 +1230,8 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>PessoaES</from>
-      <to>PessoaMG</to>
+      <from>Pessoa ES</from>
+      <to>Pessoa MG</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -1200,8 +1239,8 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>PessoaMG</from>
-      <to>PessoaSP</to>
+      <from>Pessoa MG</from>
+      <to>Pessoa GO</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -1210,7 +1249,16 @@
     </hop>
     <hop>
       <from>Sexo</from>
-      <to>PessoaES</to>
+      <to>Pessoa ES</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>N</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Endereco residencia ES</from>
+      <to>endereco residencia GO</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -1218,8 +1266,8 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>PessoaSP</from>
-      <to>endereco-residencia-ES</to>
+      <from>endereco residencia GO</from>
+      <to>Endereco residencia MG</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -1227,8 +1275,8 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>endereco-residencia-ES</from>
-      <to>endereco-residencia-SP</to>
+      <from>Endereco residencia MG</from>
+      <to>Endereco atendimento ES</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -1236,8 +1284,8 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>endereco-residencia-SP</from>
-      <to>endereco-residencia-MG</to>
+      <from>Endereco atendimento ES</from>
+      <to>Endereco atendimento SP</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -1245,8 +1293,8 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>endereco-residencia-MG</from>
-      <to>endereco-atendimento-ES</to>
+      <from>Endereco atendimento SP</from>
+      <to>Endereco atendimento MG</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -1254,8 +1302,8 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>endereco-atendimento-ES</from>
-      <to>endereco-atendimento-SP</to>
+      <from>Pessoa GO</from>
+      <to>Pessoa BA</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -1263,8 +1311,8 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>endereco-atendimento-SP</from>
-      <to>endereco-atendimento-MG</to>
+      <from>Pessoa BA</from>
+      <to>Endereco residencia ES</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
