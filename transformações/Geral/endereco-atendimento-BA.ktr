@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>endereco-atendimento-GO</name>
+    <name>endereco-atendimento-BA</name>
     <description/>
     <extended_description/>
     <trans_version/>
     <trans_type>Normal</trans_type>
-    <trans_status>0</trans_status>
     <directory>/</directory>
     <parameters>
     </parameters>
@@ -428,10 +427,10 @@
     <clusterschemas>
     </clusterschemas>
     <created_user>-</created_user>
-    <created_date>2022/05/15 17:03:49.759</created_date>
+    <created_date>2022/05/30 20:37:55.804</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2022/05/15 17:03:49.759</modified_date>
-    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
+    <modified_date>2022/05/30 20:37:55.804</modified_date>
+    <key_for_session_key/>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
@@ -489,7 +488,7 @@
   </connection>
   <order>
     <hop>
-      <from>COVID-GO</from>
+      <from>COVID-BA</from>
       <to>Select values</to>
       <enabled>Y</enabled>
     </hop>
@@ -506,7 +505,7 @@
     <hop>
       <from>Merge join 2</from>
       <to>Insert / update</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Select values</from>
@@ -560,7 +559,7 @@
     </hop>
   </order>
   <step>
-    <name>COVID-GO</name>
+    <name>COVID-BA</name>
     <type>CsvInput</type>
     <description/>
     <distribute>Y</distribute>
@@ -570,7 +569,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <filename>C:\Users\LucasGomesFlegler\Documents\TCC\planilhas\saida identificador\GO-IDENTIFICADOR.csv</filename>
+    <filename>C:\Users\LucasGomesFlegler\Documents\TCC\planilhas\saida identificador\BA-IDENTIFICADOR.csv</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
@@ -583,7 +582,7 @@
     <parallel>N</parallel>
     <newline_possible>N</newline_possible>
     <format>mixed</format>
-    <encoding>UTF-8</encoding>
+    <encoding/>
     <fields>
       <field>
         <name>identificador</name>
@@ -617,8 +616,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>80</xloc>
-      <yloc>128</yloc>
+      <xloc>64</xloc>
+      <yloc>96</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -660,8 +659,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>400</xloc>
-      <yloc>128</yloc>
+      <xloc>384</xloc>
+      <yloc>96</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -714,8 +713,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1136</xloc>
-      <yloc>176</yloc>
+      <xloc>1120</xloc>
+      <yloc>144</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -748,8 +747,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>656</xloc>
-      <yloc>176</yloc>
+      <xloc>640</xloc>
+      <yloc>144</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -782,8 +781,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>928</xloc>
-      <yloc>176</yloc>
+      <xloc>912</xloc>
+      <yloc>144</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -816,8 +815,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>208</xloc>
-      <yloc>128</yloc>
+      <xloc>192</xloc>
+      <yloc>96</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -850,8 +849,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>384</xloc>
-      <yloc>240</yloc>
+      <xloc>368</xloc>
+      <yloc>208</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -886,8 +885,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>640</xloc>
-      <yloc>336</yloc>
+      <xloc>624</xloc>
+      <yloc>304</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -928,8 +927,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>304</xloc>
-      <yloc>128</yloc>
+      <xloc>288</xloc>
+      <yloc>96</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -970,8 +969,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>496</xloc>
-      <yloc>240</yloc>
+      <xloc>480</xloc>
+      <yloc>208</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1012,8 +1011,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>752</xloc>
-      <yloc>336</yloc>
+      <xloc>736</xloc>
+      <yloc>304</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1054,8 +1053,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>512</xloc>
-      <yloc>128</yloc>
+      <xloc>496</xloc>
+      <yloc>96</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1096,8 +1095,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>768</xloc>
-      <yloc>176</yloc>
+      <xloc>752</xloc>
+      <yloc>144</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1177,8 +1176,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>240</xloc>
-      <yloc>240</yloc>
+      <xloc>224</xloc>
+      <yloc>208</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1304,8 +1303,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>496</xloc>
-      <yloc>336</yloc>
+      <xloc>480</xloc>
+      <yloc>304</yloc>
       <draw>Y</draw>
     </GUI>
   </step>

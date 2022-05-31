@@ -890,13 +890,8 @@
         <rename>pessoaid</rename>
       </field>
       <field>
-        <name>sexoid</name>
-      </field>
-      <field>
-        <name>idade</name>
-      </field>
-      <field>
         <name>codplanilha</name>
+        <rename/>
       </field>
       <select_unspecified>N</select_unspecified>
     </fields>

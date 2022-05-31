@@ -506,7 +506,7 @@
     <hop>
       <from>Merge join 2</from>
       <to>Insert / update</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Select values</from>
@@ -583,7 +583,7 @@
     <parallel>N</parallel>
     <newline_possible>N</newline_possible>
     <format>mixed</format>
-    <encoding>UTF-8</encoding>
+    <encoding/>
     <fields>
       <field>
         <name>identificador</name>
