@@ -963,28 +963,13 @@
 											"top": 395,
 											"width": 237.88330078125,
 											"height": 13
-										},
-										{
-											"_type": "ERDColumnView",
-											"_id": "AAAAAAF/BBbCDjaRrsU=",
-											"_parent": {
-												"$ref": "AAAAAAF+STWAjEmyoI8="
-											},
-											"model": {
-												"$ref": "AAAAAAF/BBbB/jaOqUU="
-											},
-											"font": "Arial;13;0",
-											"left": 109,
-											"top": 410,
-											"width": 237.88330078125,
-											"height": 13
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 104,
 									"top": 375,
 									"width": 247.88330078125,
-									"height": 53
+									"height": 38
 								}
 							],
 							"font": "Arial;13;0",
@@ -3930,16 +3915,6 @@
 							"referenceTo": {
 								"$ref": "AAAAAAF+STxQMErl8mc="
 							}
-						},
-						{
-							"_type": "ERDColumn",
-							"_id": "AAAAAAF/BBbB/jaOqUU=",
-							"_parent": {
-								"$ref": "AAAAAAF+STWAi0muw4k="
-							},
-							"name": "DataInicioSintoma",
-							"type": "DATETIME",
-							"length": 0
 						}
 					]
 				},
@@ -4091,7 +4066,7 @@
 								"$ref": "AAAAAAF+STdQ6ko6+WM="
 							},
 							"name": "DataEvolucao",
-							"type": "DATETIME",
+							"type": "DATE",
 							"length": 0
 						},
 						{

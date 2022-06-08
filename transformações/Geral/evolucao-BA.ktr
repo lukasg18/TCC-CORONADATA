@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>evolucao-ES</name>
+    <name>evolucao-BA</name>
     <description/>
     <extended_description/>
     <trans_version/>
     <trans_type>Normal</trans_type>
-    <trans_status>0</trans_status>
     <directory>/</directory>
     <parameters>
     </parameters>
@@ -428,10 +427,10 @@
     <clusterschemas>
     </clusterschemas>
     <created_user>-</created_user>
-    <created_date>2022/05/15 18:47:11.589</created_date>
+    <created_date>2022/06/04 14:16:49.835</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2022/05/15 18:47:11.589</modified_date>
-    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
+    <modified_date>2022/06/04 14:16:49.835</modified_date>
+    <key_for_session_key/>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
@@ -489,23 +488,13 @@
   </connection>
   <order>
     <hop>
-      <from>COVID ES</from>
-      <to>Filter rows</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Sort rows</from>
-      <to>Group by</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Filter rows</from>
-      <to>Add constants</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
       <from>Add constants</from>
       <to>Sort rows</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>COVID BA</from>
+      <to>Select values 2</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
@@ -514,8 +503,13 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>tabela obito</from>
-      <to>Sort rows 3</to>
+      <from>Merge join</from>
+      <to>Sort rows 4</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Sort rows</from>
+      <to>Group by</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
@@ -529,8 +523,8 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Merge join</from>
-      <to>Sort rows 4</to>
+      <from>tabela obito</from>
+      <to>Sort rows 3</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
@@ -556,6 +550,11 @@
     <hop>
       <from>Select values</from>
       <to>Insert / update</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Select values 2</from>
+      <to>Add constants</to>
       <enabled>Y</enabled>
     </hop>
   </order>
@@ -593,13 +592,13 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>288</xloc>
-      <yloc>96</yloc>
+      <xloc>304</xloc>
+      <yloc>80</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>COVID ES</name>
+    <name>COVID BA</name>
     <type>CsvInput</type>
     <description/>
     <distribute>Y</distribute>
@@ -609,7 +608,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <filename>C:\Users\LucasGomesFlegler\Documents\TCC\planilhas\saida identificador\ES-IDENTIFICADOR.csv</filename>
+    <filename>C:\Users\LucasGomesFlegler\Documents\TCC\planilhas\saida identificador\BA-IDENTIFICADOR.csv</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
@@ -625,20 +624,9 @@
     <encoding/>
     <fields>
       <field>
-        <name>DataObito</name>
-        <type>String</type>
-        <format/>
-        <currency>R$</currency>
-        <decimal>,</decimal>
-        <group>.</group>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>Evolucao</name>
-        <type>String</type>
-        <format/>
+        <name>DATA OBITO</name>
+        <type>Date</type>
+        <format>yyyy/MM/dd HH:mm:ss.SSS</format>
         <currency>R$</currency>
         <decimal>,</decimal>
         <group>.</group>
@@ -654,7 +642,7 @@
         <decimal>,</decimal>
         <group>.</group>
         <length>-1</length>
-        <precision>-1</precision>
+        <precision>0</precision>
         <trim_type>none</trim_type>
       </field>
     </fields>
@@ -667,43 +655,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>64</xloc>
-      <yloc>96</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Filter rows</name>
-    <type>FilterRows</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <send_true_to>Add constants</send_true_to>
-    <send_false_to/>
-    <compare>
-      <condition>
-        <negated>N</negated>
-        <leftvalue>Evolucao</leftvalue>
-        <function>IS NOT NULL</function>
-        <rightvalue/>
-      </condition>
-    </compare>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>176</xloc>
-      <yloc>96</yloc>
+      <xloc>48</xloc>
+      <yloc>80</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -748,8 +701,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>480</xloc>
-      <yloc>96</yloc>
+      <xloc>560</xloc>
+      <yloc>80</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -782,8 +735,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>720</xloc>
-      <yloc>96</yloc>
+      <xloc>816</xloc>
+      <yloc>80</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -824,8 +777,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>384</xloc>
-      <yloc>96</yloc>
+      <xloc>448</xloc>
+      <yloc>80</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -866,8 +819,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>576</xloc>
-      <yloc>96</yloc>
+      <xloc>672</xloc>
+      <yloc>80</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -908,8 +861,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>576</xloc>
-      <yloc>208</yloc>
+      <xloc>672</xloc>
+      <yloc>192</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -989,8 +942,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>448</xloc>
-      <yloc>208</yloc>
+      <xloc>544</xloc>
+      <yloc>192</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1070,8 +1023,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>784</xloc>
-      <yloc>224</yloc>
+      <xloc>880</xloc>
+      <yloc>208</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1112,8 +1065,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>832</xloc>
-      <yloc>96</yloc>
+      <xloc>928</xloc>
+      <yloc>80</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1154,8 +1107,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>896</xloc>
-      <yloc>224</yloc>
+      <xloc>992</xloc>
+      <yloc>208</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1188,8 +1141,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>944</xloc>
-      <yloc>96</yloc>
+      <xloc>1040</xloc>
+      <yloc>80</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1207,31 +1160,21 @@
     <fields>
       <field>
         <name>EvolucaoConst</name>
-        <rename/>
       </field>
       <field>
         <name>identificador</name>
-        <rename/>
       </field>
       <field>
         <name>DataObito</name>
-        <rename/>
       </field>
       <field>
         <name>tipoevolucaoid</name>
-        <rename/>
-      </field>
-      <field>
-        <name>evolucao</name>
-        <rename/>
       </field>
       <field>
         <name>pessoaid</name>
-        <rename/>
       </field>
       <field>
         <name>codplanilha</name>
-        <rename/>
       </field>
       <select_unspecified>N</select_unspecified>
       <meta>
@@ -1261,8 +1204,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1056</xloc>
-      <yloc>96</yloc>
+      <xloc>1152</xloc>
+      <yloc>80</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1326,8 +1269,44 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1168</xloc>
-      <yloc>96</yloc>
+      <xloc>1264</xloc>
+      <yloc>80</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Select values 2</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>DATA OBITO</name>
+        <rename>DataObito</rename>
+      </field>
+      <field>
+        <name>identificador</name>
+        <rename/>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>176</xloc>
+      <yloc>80</yloc>
       <draw>Y</draw>
     </GUI>
   </step>

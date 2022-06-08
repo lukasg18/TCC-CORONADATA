@@ -495,7 +495,7 @@
     <hop>
       <from>COVID ES</from>
       <to>Filter rows</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>Filter rows</from>
