@@ -727,7 +727,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1120</xloc>
+      <xloc>1072</xloc>
       <yloc>176</yloc>
       <draw>Y</draw>
     </GUI>
@@ -890,7 +890,6 @@
       </field>
       <field>
         <name>codplanilha</name>
-        <rename/>
       </field>
       <select_unspecified>N</select_unspecified>
     </fields>

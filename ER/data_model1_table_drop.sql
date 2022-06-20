@@ -11,7 +11,6 @@ DROP TABLE public.evolucao CASCADE;
 DROP TABLE public.tipoevolucao CASCADE;
 DROP TABLE public.racacor CASCADE;
 DROP TABLE public.pessoaracacor CASCADE;
-DROP TABLE public.grupocomorbidade CASCADE;
 DROP TABLE public.teste CASCADE;
 DROP TABLE public.enderecoatendimento CASCADE;
 DROP TABLE public.sexo CASCADE;

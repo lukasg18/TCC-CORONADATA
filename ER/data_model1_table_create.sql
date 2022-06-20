@@ -58,7 +58,6 @@ CREATE INDEX ON public.tipocomorbidade
 CREATE TABLE public.sintoma (
 	pessoaid integer NOT NULL,
 	tiposintomaid integer NOT NULL,
-	datainiciosintoma timestamp with time zone NOT NULL,
 	PRIMARY KEY (pessoaid, tiposintomaid)
 );
 
@@ -79,7 +78,7 @@ CREATE TABLE public.tipoteste (
 
 CREATE TABLE public.evolucao (
 	id SERIAL NOT NULL,
-	dataevolucao timestamp with time zone NOT NULL,
+	dataevolucao date NOT NULL,
 	pessoaid integer NOT NULL,
 	tipoevolucaoid integer NOT NULL,
 	PRIMARY KEY (id)
@@ -109,13 +108,6 @@ CREATE TABLE public.pessoaracacor (
 	pessoaid integer NOT NULL,
 	racacorid integer NOT NULL,
 	PRIMARY KEY (pessoaid, racacorid)
-);
-
-
-CREATE TABLE public.grupocomorbidade (
-	id SERIAL NOT NULL,
-	nome VARCHAR(50) NOT NULL,
-	PRIMARY KEY (id)
 );
 
 
@@ -171,7 +163,6 @@ ALTER TABLE public.enderecoresidencial ADD CONSTRAINT FK_enderecoresidencial__pe
 ALTER TABLE public.municipio ADD CONSTRAINT FK_municipio__estadoid FOREIGN KEY (estadoid) REFERENCES public.estado(id);
 ALTER TABLE public.comorbidade ADD CONSTRAINT FK_comorbidade__pessoaid FOREIGN KEY (pessoaid) REFERENCES public.pessoa(id);
 ALTER TABLE public.comorbidade ADD CONSTRAINT FK_comorbidade__tipocomorbidadeid FOREIGN KEY (tipocomorbidadeid) REFERENCES public.tipocomorbidade(id);
-ALTER TABLE public.tipocomorbidade ADD CONSTRAINT FK_tipocomorbidade__grupocomorbidadeid FOREIGN KEY (grupocomorbidadeid) REFERENCES public.grupocomorbidade(id);
 ALTER TABLE public.sintoma ADD CONSTRAINT FK_sintoma__pessoaid FOREIGN KEY (pessoaid) REFERENCES public.pessoa(id);
 ALTER TABLE public.sintoma ADD CONSTRAINT FK_sintoma__tiposintomaid FOREIGN KEY (tiposintomaid) REFERENCES public.tiposintoma(id);
 ALTER TABLE public.evolucao ADD CONSTRAINT FK_evolucao__pessoaid FOREIGN KEY (pessoaid) REFERENCES public.pessoa(id);
