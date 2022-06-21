@@ -513,6 +513,56 @@
       <to>Insert / update 2</to>
       <enabled>Y</enabled>
     </hop>
+    <hop>
+      <from>Sort rows 2</from>
+      <to>Group by 3</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Sort rows 4 2 2 2 2</from>
+      <to>Group by 2 2 2 2 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Sort rows 4 2 2 2</from>
+      <to>Group by 2 2 2 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>ES 3 2 2</from>
+      <to>Comorbidade Tabagismo</to>
+      <enabled>N</enabled>
+    </hop>
+    <hop>
+      <from>ES 3 2 2</from>
+      <to>Comorbidade Tabagismo</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Comorbidade Tabagismo</from>
+      <to>Add constants 3 2 2 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>ES 3 2 2 2</from>
+      <to>Comorbidade Obesidade</to>
+      <enabled>N</enabled>
+    </hop>
+    <hop>
+      <from>Add constants 2 2 2 2 2</from>
+      <to>Insert / update 2 2 2 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Sort rows 4 2 2</from>
+      <to>Group by 2 2 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>ES</from>
+      <to>Row normaliser</to>
+      <enabled>Y</enabled>
+    </hop>
   </order>
   <step>
     <name>ES</name>
@@ -840,6 +890,186 @@
     </remotesteps>
     <GUI>
       <xloc>656</xloc>
+      <yloc>80</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>String operations</name>
+    <type>StringOperations</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <in_stream_name>typefield</in_stream_name>
+        <out_stream_name/>
+        <trim_type/>
+        <lower_upper>upper</lower_upper>
+        <padding_type/>
+        <pad_char/>
+        <pad_len/>
+        <init_cap/>
+        <mask_xml/>
+        <digits/>
+        <remove_special_characters/>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>656</xloc>
+      <yloc>80</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Sort rows 2</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <directory>%%java.io.tmpdir%%</directory>
+    <prefix>out</prefix>
+    <sort_size>1000000</sort_size>
+    <free_memory/>
+    <compress>N</compress>
+    <compress_variable/>
+    <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>typefield</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>416</xloc>
+      <yloc>80</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Group by 3</name>
+    <type>GroupBy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <all_rows>N</all_rows>
+    <ignore_aggregate>N</ignore_aggregate>
+    <field_ignore/>
+    <directory>%%java.io.tmpdir%%</directory>
+    <prefix>grp</prefix>
+    <add_linenr>N</add_linenr>
+    <linenr_fieldname/>
+    <give_back_row>N</give_back_row>
+    <group>
+      <field>
+        <name>typefield</name>
+      </field>
+    </group>
+    <fields>
+      </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>544</xloc>
+      <yloc>80</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Row normaliser</name>
+    <type>Normaliser</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <typefield>typefield</typefield>
+    <fields>
+      <field>
+        <name>ComorbidadePulmao</name>
+        <value>Comorbidade Pulmao</value>
+        <norm>Comobirdade</norm>
+      </field>
+      <field>
+        <name>ComorbidadeCardio</name>
+        <value>Comorbidade Cardio</value>
+        <norm>Comobirdade</norm>
+      </field>
+      <field>
+        <name>ComorbidadeRenal</name>
+        <value>Comorbidade Renal</value>
+        <norm>Comobirdade</norm>
+      </field>
+      <field>
+        <name>ComorbidadeDiabetes</name>
+        <value>Comorbidade Diabetes</value>
+        <norm>Comobirdade</norm>
+      </field>
+      <field>
+        <name>ComorbidadeTabagismo</name>
+        <value>Comorbidade Tabagismo</value>
+        <norm>Comobirdade</norm>
+      </field>
+      <field>
+        <name>ComorbidadeObesidade</name>
+        <value>Comorbidade Obesidade</value>
+        <norm>Comobirdade</norm>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>272</xloc>
       <yloc>80</yloc>
       <draw>Y</draw>
     </GUI>
