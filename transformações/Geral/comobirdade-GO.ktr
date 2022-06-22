@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>comobirdade-ES</name>
+    <name>comobirdade-GO</name>
     <description/>
     <extended_description/>
     <trans_version/>
@@ -427,9 +427,9 @@
     <clusterschemas>
     </clusterschemas>
     <created_user>-</created_user>
-    <created_date>2022/06/20 19:01:56.943</created_date>
+    <created_date>2022/06/21 17:58:33.310</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2022/06/20 19:01:56.943</modified_date>
+    <modified_date>2022/06/21 17:58:33.310</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -488,38 +488,8 @@
   </connection>
   <order>
     <hop>
-      <from>ES</from>
+      <from>GO 2</from>
       <to>Row normaliser</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>ES</from>
-      <to>Row normaliser</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Row normaliser</from>
-      <to>Sort rows 2</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Row normaliser</from>
-      <to>Sort rows 2</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Row normaliser</from>
-      <to>Sort rows 2</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Row normaliser</from>
-      <to>Sort rows 2</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Sort rows 2</from>
-      <to>Remove Nulos</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
@@ -528,33 +498,8 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Filtra "Sim" nas comobirdades</from>
-      <to>String operations 2</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>String operations 2</from>
-      <to>Sort rows</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Sort rows</from>
-      <to>Merge join</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Tabela Tipo Comobirdade</from>
-      <to>Sort rows 3</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Sort rows 3</from>
-      <to>Merge join</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Merge join</from>
-      <to>Sort rows 3 2</to>
+      <from>Row normaliser</from>
+      <to>Remove Nulos</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
@@ -563,13 +508,13 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Sort rows 3 2</from>
-      <to>Merge join 2</to>
+      <from>Tabela Tipo Comobirdade</from>
+      <to>Sort rows 3</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Sort rows 3 3</from>
-      <to>Merge join 2</to>
+      <from>Merge join</from>
+      <to>Sort rows 3 2</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
@@ -577,9 +522,83 @@
       <to>Insert / update 2</to>
       <enabled>Y</enabled>
     </hop>
+    <hop>
+      <from>Sort rows 3 2</from>
+      <to>Merge join 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Filtra "Sim" nas comobirdades</from>
+      <to>String operations</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>String operations</from>
+      <to>Sort rows 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Sort rows 2</from>
+      <to>Merge join</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Sort rows 3</from>
+      <to>Merge join</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Sort rows 3 3</from>
+      <to>Merge join 2</to>
+      <enabled>Y</enabled>
+    </hop>
   </order>
   <step>
-    <name>ES</name>
+    <name>Filtra "Sim" nas comobirdades</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <send_true_to>String operations</send_true_to>
+    <send_false_to/>
+    <compare>
+      <condition>
+        <negated>N</negated>
+        <leftvalue>Comobirdade</leftvalue>
+        <function>=</function>
+        <rightvalue/>
+        <value>
+          <name>constant</name>
+          <type>String</type>
+          <text>SIM</text>
+          <length>-1</length>
+          <precision>-1</precision>
+          <isnull>N</isnull>
+          <mask/>
+        </value>
+      </condition>
+    </compare>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>512</xloc>
+      <yloc>96</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>GO 2</name>
     <type>CsvInput</type>
     <description/>
     <distribute>Y</distribute>
@@ -589,7 +608,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <filename>C:\Users\LucasGomesFlegler\Documents\TCC\planilhas\saida identificador\ES-IDENTIFICADOR.csv</filename>
+    <filename>C:\Users\LucasGomesFlegler\Documents\TCC\planilhas\saida identificador\GO-IDENTIFICADOR.csv</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
@@ -605,68 +624,57 @@
     <encoding/>
     <fields>
       <field>
-        <name>ComorbidadePulmao</name>
+        <name>diabetes</name>
         <type>String</type>
         <format/>
         <currency>R$</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>3</length>
+        <length>8</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
       <field>
-        <name>ComorbidadeCardio</name>
+        <name>doenca_cardiovascular</name>
         <type>String</type>
         <format/>
         <currency>R$</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>3</length>
+        <length>8</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
       <field>
-        <name>ComorbidadeRenal</name>
+        <name>doenca_respiratoria</name>
         <type>String</type>
         <format/>
         <currency>R$</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>3</length>
+        <length>8</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
       <field>
-        <name>ComorbidadeDiabetes</name>
+        <name>imunossupressao</name>
         <type>String</type>
         <format/>
         <currency>R$</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>3</length>
+        <length>8</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
       <field>
-        <name>ComorbidadeTabagismo</name>
+        <name>puerpera</name>
         <type>String</type>
         <format/>
         <currency>R$</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>3</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>ComorbidadeObesidade</name>
-        <type>String</type>
-        <format/>
-        <currency>R$</currency>
-        <decimal>,</decimal>
-        <group>.</group>
-        <length>3</length>
+        <length>8</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -691,52 +699,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>96</xloc>
-      <yloc>112</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Filtra "Sim" nas comobirdades</name>
-    <type>FilterRows</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <send_true_to>String operations 2</send_true_to>
-    <send_false_to/>
-    <compare>
-      <condition>
-        <negated>N</negated>
-        <leftvalue>Comobirdade</leftvalue>
-        <function>=</function>
-        <rightvalue/>
-        <value>
-          <name>constant</name>
-          <type>String</type>
-          <text>Sim</text>
-          <length>-1</length>
-          <precision>-1</precision>
-          <isnull>N</isnull>
-          <mask/>
-        </value>
-      </condition>
-    </compare>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>576</xloc>
-      <yloc>112</yloc>
+      <xloc>128</xloc>
+      <yloc>96</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -789,8 +753,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1392</xloc>
-      <yloc>112</yloc>
+      <xloc>1344</xloc>
+      <yloc>96</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -806,7 +770,7 @@
       <schema_name/>
     </partitioning>
     <join_type>INNER</join_type>
-    <step1>Sort rows</step1>
+    <step1>Sort rows 2</step1>
     <step2>Sort rows 3</step2>
     <keys_1>
       <key>typefield</key>
@@ -823,8 +787,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>976</xloc>
-      <yloc>112</yloc>
+      <xloc>928</xloc>
+      <yloc>96</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -857,8 +821,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1248</xloc>
-      <yloc>112</yloc>
+      <xloc>1200</xloc>
+      <yloc>96</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -892,8 +856,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>432</xloc>
-      <yloc>112</yloc>
+      <xloc>368</xloc>
+      <yloc>96</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -911,33 +875,28 @@
     <typefield>typefield</typefield>
     <fields>
       <field>
-        <name>ComorbidadePulmao</name>
-        <value>Comorbidade Pulmao</value>
+        <name>diabetes</name>
+        <value>diabetes</value>
         <norm>Comobirdade</norm>
       </field>
       <field>
-        <name>ComorbidadeCardio</name>
-        <value>Comorbidade Cardio</value>
+        <name>doenca_cardiovascular</name>
+        <value>doenca cardiovascular</value>
         <norm>Comobirdade</norm>
       </field>
       <field>
-        <name>ComorbidadeRenal</name>
-        <value>Comorbidade Renal</value>
+        <name>doenca_respiratoria</name>
+        <value>doenca respiratoria</value>
         <norm>Comobirdade</norm>
       </field>
       <field>
-        <name>ComorbidadeDiabetes</name>
-        <value>Comorbidade Diabetes</value>
+        <name>imunossupressao</name>
+        <value>imunossupressao</value>
         <norm>Comobirdade</norm>
       </field>
       <field>
-        <name>ComorbidadeTabagismo</name>
-        <value>Comorbidade Tabagismo</value>
-        <norm>Comobirdade</norm>
-      </field>
-      <field>
-        <name>ComorbidadeObesidade</name>
-        <value>Comorbidade Obesidade</value>
+        <name>puerpera</name>
+        <value>puerpera</value>
         <norm>Comobirdade</norm>
       </field>
     </fields>
@@ -950,50 +909,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>208</xloc>
-      <yloc>112</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Sort rows</name>
-    <type>SortRows</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <directory>%%java.io.tmpdir%%</directory>
-    <prefix>out</prefix>
-    <sort_size>1000000</sort_size>
-    <free_memory/>
-    <compress>N</compress>
-    <compress_variable/>
-    <unique_rows>N</unique_rows>
-    <fields>
-      <field>
-        <name>typefield</name>
-        <ascending>Y</ascending>
-        <case_sensitive>N</case_sensitive>
-        <collator_enabled>N</collator_enabled>
-        <collator_strength>0</collator_strength>
-        <presorted>N</presorted>
-      </field>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>864</xloc>
-      <yloc>112</yloc>
+      <xloc>256</xloc>
+      <yloc>96</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1034,8 +951,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>320</xloc>
-      <yloc>112</yloc>
+      <xloc>800</xloc>
+      <yloc>96</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1076,8 +993,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>864</xloc>
-      <yloc>256</yloc>
+      <xloc>784</xloc>
+      <yloc>224</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1118,8 +1035,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1104</xloc>
-      <yloc>112</yloc>
+      <xloc>1056</xloc>
+      <yloc>96</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1160,13 +1077,13 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1136</xloc>
-      <yloc>256</yloc>
+      <xloc>1056</xloc>
+      <yloc>224</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>String operations 2</name>
+    <name>String operations</name>
     <type>StringOperations</type>
     <description/>
     <distribute>Y</distribute>
@@ -1200,8 +1117,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>736</xloc>
-      <yloc>112</yloc>
+      <xloc>672</xloc>
+      <yloc>96</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1281,8 +1198,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>992</xloc>
-      <yloc>256</yloc>
+      <xloc>912</xloc>
+      <yloc>224</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1362,8 +1279,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>720</xloc>
-      <yloc>256</yloc>
+      <xloc>640</xloc>
+      <yloc>224</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
