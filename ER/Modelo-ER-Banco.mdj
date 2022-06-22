@@ -1967,22 +1967,6 @@
 										},
 										{
 											"_type": "ERDColumnView",
-											"_id": "AAAAAAF/UceVyP2svtE=",
-											"_parent": {
-												"$ref": "AAAAAAF/KCp7dfyr5BY="
-											},
-											"model": {
-												"$ref": "AAAAAAF/UceVuv2pCgk="
-											},
-											"visible": false,
-											"font": "Arial;13;0",
-											"left": 501,
-											"top": 210,
-											"width": 205.12939453125,
-											"height": 13
-										},
-										{
-											"_type": "ERDColumnView",
 											"_id": "AAAAAAGBDAOuCFxgdQw=",
 											"_parent": {
 												"$ref": "AAAAAAF/KCp7dfyr5BY="
@@ -4102,21 +4086,11 @@
 						},
 						{
 							"_type": "ERDColumn",
-							"_id": "AAAAAAF/UceVuv2pCgk=",
-							"_parent": {
-								"$ref": "AAAAAAF/KCp7dPyn26U="
-							},
-							"name": "DataExame",
-							"type": "DATETIME",
-							"length": 0
-						},
-						{
-							"_type": "ERDColumn",
 							"_id": "AAAAAAGBDAOt+FxdAmk=",
 							"_parent": {
 								"$ref": "AAAAAAF/KCp7dPyn26U="
 							},
-							"name": "TipoResultado",
+							"name": "TipoResultadoId",
 							"type": "INTEGER",
 							"length": 0,
 							"foreignKey": true,

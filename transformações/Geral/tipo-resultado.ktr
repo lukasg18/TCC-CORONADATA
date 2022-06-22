@@ -535,13 +535,13 @@
     <encoding/>
     <fields>
       <field>
-        <name>Classificacao</name>
+        <name>ResultadoTesteRapido</name>
         <type>String</type>
         <format/>
         <currency>R$</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>11</length>
+        <length>13</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -581,7 +581,7 @@
     <give_back_row>N</give_back_row>
     <group>
       <field>
-        <name>Classificacao</name>
+        <name>ResultadoTesteRapido</name>
       </field>
     </group>
     <fields>
@@ -618,14 +618,14 @@
       <schema>public</schema>
       <table>tiporesultado</table>
       <key>
-        <name>Classificacao</name>
+        <name>ResultadoTesteRapido</name>
         <field>nome</field>
         <condition>LIKE</condition>
         <name2/>
       </key>
       <value>
         <name>nome</name>
-        <rename>Classificacao</rename>
+        <rename>ResultadoTesteRapido</rename>
         <update>Y</update>
       </value>
     </lookup>
@@ -663,7 +663,7 @@
     <unique_rows>N</unique_rows>
     <fields>
       <field>
-        <name>Classificacao</name>
+        <name>ResultadoTesteRapido</name>
         <ascending>Y</ascending>
         <case_sensitive>N</case_sensitive>
         <collator_enabled>N</collator_enabled>
@@ -698,7 +698,7 @@
     </partitioning>
     <fields>
       <field>
-        <in_stream_name>Classificacao</in_stream_name>
+        <in_stream_name>ResultadoTesteRapido</in_stream_name>
         <out_stream_name/>
         <trim_type/>
         <lower_upper>upper</lower_upper>
