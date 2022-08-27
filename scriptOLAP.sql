@@ -13,6 +13,7 @@ select
 	ts.nome as sintoma,
 	concat(c.pessoaid, c.tipocomorbidadeid) as comobirdadeid,
 	tc.nome as comobirdade,
+	te.id as testeid,
 	tt.nome as teste,
 	tr.nome as resultadoTeste,
 	tv.nome as evolucao,

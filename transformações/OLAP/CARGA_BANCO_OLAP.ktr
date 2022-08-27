@@ -561,7 +561,7 @@
     <hop>
       <from>Table input - Pegando dados do OLTP</from>
       <to>Select values 5</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Table input - Pegando dados do OLTP</from>
@@ -774,6 +774,7 @@
 	ts.nome as sintoma,
 	concat(c.pessoaid, c.tipocomorbidadeid) as comobirdadeid,
 	tc.nome as comobirdade,
+	te.id as testeid,
 	tt.nome as teste,
 	tr.nome as resultadoTeste,
 	tv.nome as evolucao,
@@ -1118,6 +1119,29 @@ inner join tipoevolucao tv on tv.id = ev.tipoevolucaoid</sql>
         <origin>Table input - Pegando dados do OLTP</origin>
         <comments>comobirdade</comments>
         <conversion_Mask/>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>pt_BR</date_format_locale>
+        <date_format_timezone>America/Sao_Paulo</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>Integer</type>
+        <storagetype>normal</storagetype>
+        <name>testeid</name>
+        <length>9</length>
+        <precision>0</precision>
+        <origin>Table input - Pegando dados do OLTP</origin>
+        <comments>testeid</comments>
+        <conversion_Mask>####0;-####0</conversion_Mask>
         <decimal_symbol>,</decimal_symbol>
         <grouping_symbol>.</grouping_symbol>
         <currency_symbol/>
@@ -1968,7 +1992,7 @@ inner join tipoevolucao tv on tv.id = ev.tipoevolucaoid</sql>
     <update>Y</update>
     <fields>
       <key>
-        <name>comobirdadeid</name>
+        <name>testeid</name>
         <lookup>codigo</lookup>
       </key>
       <date>
@@ -1977,12 +2001,17 @@ inner join tipoevolucao tv on tv.id = ev.tipoevolucaoid</sql>
         <to>date_to</to>
       </date>
       <field>
-        <name>comobirdade</name>
+        <name>teste</name>
         <lookup>nome</lookup>
         <update>Insert</update>
       </field>
+      <field>
+        <name>resultadoteste</name>
+        <lookup>resultado</lookup>
+        <update>Insert</update>
+      </field>
       <return>
-        <name>dim_cod_comobirdade</name>
+        <name>dim_cod_teste</name>
         <rename/>
         <creation_method>tablemax</creation_method>
         <use_autoinc>N</use_autoinc>
@@ -2025,16 +2054,39 @@ inner join tipoevolucao tv on tv.id = ev.tipoevolucaoid</sql>
     </partitioning>
     <fields>
       <field>
-        <name>comobirdadeid</name>
+        <name>testeid</name>
+        <rename/>
       </field>
       <field>
-        <name>comobirdade</name>
+        <name>teste</name>
+        <rename/>
+      </field>
+      <field>
+        <name>resultadoteste</name>
+        <rename/>
       </field>
       <select_unspecified>N</select_unspecified>
       <meta>
-        <name>comobirdadeid</name>
-        <rename>comobirdadeid</rename>
+        <name>testeid</name>
+        <rename>testeid</rename>
         <type>Integer</type>
+        <length>-2</length>
+        <precision>0</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>
+      <meta>
+        <name>teste</name>
+        <rename>teste</rename>
+        <type>String</type>
         <length>-2</length>
         <precision>-2</precision>
         <conversion_mask/>
@@ -2049,8 +2101,8 @@ inner join tipoevolucao tv on tv.id = ev.tipoevolucaoid</sql>
         <storage_type/>
       </meta>
       <meta>
-        <name>comobirdade</name>
-        <rename>comobirdade</rename>
+        <name>resultadoteste</name>
+        <rename>resultadoteste</rename>
         <type>String</type>
         <length>-2</length>
         <precision>-2</precision>
