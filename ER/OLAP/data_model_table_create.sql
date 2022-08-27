@@ -1,90 +1,78 @@
 CREATE TABLE public.fatoobito (
-    fidtestecovid integer NOT NULL,
-    fidtempo integer NOT NULL,
-    fidsintoma integer NOT NULL,
-    fidcomobirdade integer NOT NULL,
-    fidpessoa integer NOT NULL,
-    column1  NOT NULL
+	dim_cod_teste integer NOT NULL,
+	dim_cod_tempo integer NOT NULL,
+	dim_cod_sintoma integer NOT NULL,
+	dim_cod_comobirdade integer NOT NULL,
+	dim_cod_pessoa integer NOT NULL,
+	dim_cod_local integer NOT NULL
 );
 
 CREATE INDEX ON public.fatoobito
-    (fidtestecovid);
+	(dim_cod_teste);
 CREATE INDEX ON public.fatoobito
-    (fidtempo);
+	(dim_cod_tempo);
 CREATE INDEX ON public.fatoobito
-    (fidsintoma);
+	(dim_cod_sintoma);
 CREATE INDEX ON public.fatoobito
-    (fidcomobirdade);
+	(dim_cod_comobirdade);
 CREATE INDEX ON public.fatoobito
-    (fidpessoa);
-
-
-CREATE TABLE public.fatopessoa (
-);
-
-
-CREATE TABLE public.dimenderecoresidencial (
-);
-
-
-CREATE TABLE public.dimenderecoatendimento (
-);
+	(dim_cod_pessoa);
+CREATE INDEX ON public.fatoobito
+	(dim_cod_local);
 
 
 CREATE TABLE public.dimtempo (
-    id integer NOT NULL,
-    dia integer NOT NULL,
-    mes integer NOT NULL,
-    ano integer NOT NULL,
-    diasemana VARCHAR(20) NOT NULL,
-    quarter VARCHAR(20) NOT NULL,
-    nomemes VARCHAR(20) NOT NULL,
-    PRIMARY KEY (id)
+	dim_cod_tempo integer NOT NULL,
+	dia integer,
+	mes integer,
+	ano integer,
+	diasemana VARCHAR(50),
+	quarter VARCHAR(50),
+	nomemes VARCHAR(50),
+	codigo integer
 );
 
 
 CREATE TABLE public.dimcomobirdade (
-    id integer NOT NULL,
-    nome VARCHAR(100) NOT NULL,
-    PRIMARY KEY (id)
+	dim_cod_comobirdade integer NOT NULL,
+	nome VARCHAR(100),
+	codigo integer
 );
 
 
 CREATE TABLE public.dimsintoma (
-    id integer NOT NULL,
-    nome VARCHAR(100) NOT NULL,
-    PRIMARY KEY (id)
+	dim_cod_sintoma integer NOT NULL,
+	nome VARCHAR(100),
+	codigo integer
 );
 
 
 CREATE TABLE public.dimtestecovid (
-    id integer NOT NULL,
-    nome VARCHAR(100) NOT NULL,
-    resultado VARCHAR(100) NOT NULL,
-    PRIMARY KEY (id)
+	dim_cod_teste integer NOT NULL,
+	nome VARCHAR(100),
+	resultado VARCHAR(100),
+	codigo integer
 );
 
 
 CREATE TABLE public.dimpessoa (
-    id integer NOT NULL,
-    estadoatendimento integer NOT NULL,
-    racacor VARCHAR(20) NOT NULL,
-    faixaetaria VARCHAR(100) NOT NULL,
-    PRIMARY KEY (id)
+	dim_cod_pessoa integer NOT NULL,
+	estadoatendimento integer,
+	racacor VARCHAR(50),
+	faixaetaria VARCHAR(100),
+	codigo integer
 );
-
-CREATE INDEX ON public.dimpessoa
-    (estadoatendimento);
 
 
 CREATE TABLE public.dimlocalresidencia (
-    id integer NOT NULL,
-    municipio VARCHAR(100) NOT NULL,
-    estado VARCHAR(50) NOT NULL,
-    PRIMARY KEY (id)
+	dim_cod_local integer NOT NULL,
+	municipio VARCHAR(100),
+	estado VARCHAR(50),
+	codigo integer
 );
 
-
-CREATE TABLE public.entity1 (
-);
-
+ALTER TABLE "public".dimcomobirdade ADD COLUMN version INTEGER;
+ALTER TABLE "public".dimcomobirdade ADD COLUMN date_from TIMESTAMP;
+ALTER TABLE "public".dimcomobirdade ADD COLUMN date_to TIMESTAMP;
+CREATE INDEX idx_dimcomobirdade_lookup ON "public".dimcomobirdade(codigo);
+CREATE INDEX idx_dimcomobirdade_tk ON "public".dimcomobirdade(dim_cod_comobirdade)
