@@ -565,8 +565,8 @@
     </hop>
     <hop>
       <from>Table input - Pegando dados do OLTP</from>
-      <to>Select values 5 2</to>
-      <enabled>N</enabled>
+      <to>Select values 6</to>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Select values</from>
@@ -591,6 +591,11 @@
     <hop>
       <from>Select values 5</from>
       <to>Dim teste Covid</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Select values 6</from>
+      <to>Dim Pessoa</to>
       <enabled>Y</enabled>
     </hop>
   </order>
@@ -2150,7 +2155,7 @@ inner join tipoevolucao tv on tv.id = ev.tipoevolucaoid</sql>
     <update>Y</update>
     <fields>
       <key>
-        <name>comobirdadeid</name>
+        <name>pessoaid</name>
         <lookup>codigo</lookup>
       </key>
       <date>
@@ -2159,12 +2164,27 @@ inner join tipoevolucao tv on tv.id = ev.tipoevolucaoid</sql>
         <to>date_to</to>
       </date>
       <field>
-        <name>comobirdade</name>
-        <lookup>nome</lookup>
+        <name>racacor</name>
+        <lookup>racacor</lookup>
+        <update>Insert</update>
+      </field>
+      <field>
+        <name>estadoatendimento</name>
+        <lookup>estadoatendimento</lookup>
+        <update>Insert</update>
+      </field>
+      <field>
+        <name>faixaetaria</name>
+        <lookup>faixaetaria</lookup>
+        <update>Insert</update>
+      </field>
+      <field>
+        <name>sexo</name>
+        <lookup>sexo</lookup>
         <update>Insert</update>
       </field>
       <return>
-        <name>dim_cod_comobirdade</name>
+        <name>dim_cod_pessoa</name>
         <rename/>
         <creation_method>tablemax</creation_method>
         <use_autoinc>N</use_autoinc>
@@ -2195,7 +2215,7 @@ inner join tipoevolucao tv on tv.id = ev.tipoevolucaoid</sql>
     </GUI>
   </step>
   <step>
-    <name>Select values 5 2</name>
+    <name>Select values 6</name>
     <type>SelectValues</type>
     <description/>
     <distribute>Y</distribute>
@@ -2207,17 +2227,52 @@ inner join tipoevolucao tv on tv.id = ev.tipoevolucaoid</sql>
     </partitioning>
     <fields>
       <field>
-        <name>comobirdadeid</name>
+        <name>pessoaid</name>
+        <rename/>
       </field>
       <field>
-        <name>comobirdade</name>
+        <name>sexo</name>
+        <rename/>
+      </field>
+      <field>
+        <name>faixaetaria</name>
+        <rename/>
+      </field>
+      <field>
+        <name>codplanilha</name>
+        <rename/>
+      </field>
+      <field>
+        <name>racacor</name>
+        <rename/>
+      </field>
+      <field>
+        <name>estadoatendimento</name>
+        <rename/>
       </field>
       <select_unspecified>N</select_unspecified>
       <meta>
-        <name>comobirdadeid</name>
-        <rename>comobirdadeid</rename>
+        <name>pessoaid</name>
+        <rename>pessoaid</rename>
         <type>Integer</type>
-        <length>-2</length>
+        <length>9</length>
+        <precision>0</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>
+      <meta>
+        <name>sexo</name>
+        <rename>sexo</rename>
+        <type>String</type>
+        <length>20</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
@@ -2231,8 +2286,42 @@ inner join tipoevolucao tv on tv.id = ev.tipoevolucaoid</sql>
         <storage_type/>
       </meta>
       <meta>
-        <name>comobirdade</name>
-        <rename>comobirdade</rename>
+        <name>faixaetaria</name>
+        <rename>faixaetaria</rename>
+        <type>String</type>
+        <length>100</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>
+      <meta>
+        <name>racacor</name>
+        <rename>racacor</rename>
+        <type>String</type>
+        <length>100</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>
+      <meta>
+        <name>estadoatendimento</name>
+        <rename>estadoatendimento</rename>
         <type>String</type>
         <length>-2</length>
         <precision>-2</precision>
