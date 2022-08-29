@@ -34,3 +34,10 @@ ALTER TABLE "public".dimtestecovid ADD COLUMN date_to TIMESTAMP;
 CREATE INDEX idx_dimtestecovid_lookup ON "public".dimtestecovid(codigo);
 CREATE INDEX idx_dimtestecovid_tk ON "public".dimtestecovid(dim_cod_teste);
 
+-- Pessoa
+ALTER TABLE "public".dimpessoa ADD COLUMN version INTEGER;
+ALTER TABLE "public".dimpessoa ADD COLUMN date_from TIMESTAMP;
+ALTER TABLE "public".dimpessoa ADD COLUMN date_to TIMESTAMP;
+CREATE INDEX idx_dimpessoa_lookup ON "public".dimpessoa(codigo);
+CREATE INDEX idx_dimpessoa_tk ON "public".dimpessoa(dim_cod_pessoa);
+
