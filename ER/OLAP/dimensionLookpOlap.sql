@@ -27,14 +27,14 @@ CREATE INDEX idx_dimtempo_lookup ON "public".dimtempo(codigo);
 CREATE INDEX idx_dimtempo_tk ON "public".dimtempo(dim_cod_tempo);
 
 
--- Teste Covid
+-- TESTE COVID
 ALTER TABLE "public".dimtestecovid ADD COLUMN version INTEGER;
 ALTER TABLE "public".dimtestecovid ADD COLUMN date_from TIMESTAMP;
 ALTER TABLE "public".dimtestecovid ADD COLUMN date_to TIMESTAMP;
 CREATE INDEX idx_dimtestecovid_lookup ON "public".dimtestecovid(codigo);
 CREATE INDEX idx_dimtestecovid_tk ON "public".dimtestecovid(dim_cod_teste);
 
--- Pessoa
+-- PESSOA
 ALTER TABLE "public".dimpessoa ADD COLUMN version INTEGER;
 ALTER TABLE "public".dimpessoa ADD COLUMN date_from TIMESTAMP;
 ALTER TABLE "public".dimpessoa ADD COLUMN date_to TIMESTAMP;

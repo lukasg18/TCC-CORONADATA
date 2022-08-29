@@ -70,9 +70,3 @@ CREATE TABLE public.dimlocalresidencia (
 	estado VARCHAR(50),
 	codigo integer
 );
-
-ALTER TABLE "public".dimcomobirdade ADD COLUMN version INTEGER;
-ALTER TABLE "public".dimcomobirdade ADD COLUMN date_from TIMESTAMP;
-ALTER TABLE "public".dimcomobirdade ADD COLUMN date_to TIMESTAMP;
-CREATE INDEX idx_dimcomobirdade_lookup ON "public".dimcomobirdade(codigo);
-CREATE INDEX idx_dimcomobirdade_tk ON "public".dimcomobirdade(dim_cod_comobirdade)
