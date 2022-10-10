@@ -305,7 +305,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>352</xloc>
+      <xloc>224</xloc>
       <yloc>112</yloc>
       <attributes_kjc/>
     </entry>
@@ -344,7 +344,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>608</xloc>
+      <xloc>480</xloc>
       <yloc>112</yloc>
       <attributes_kjc/>
     </entry>
@@ -383,12 +383,12 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>224</xloc>
+      <xloc>752</xloc>
       <yloc>112</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
-      <name>Endereco municipio</name>
+      <name>Municipio</name>
       <description/>
       <type>TRANS</type>
       <attributes/>
@@ -422,7 +422,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>752</xloc>
+      <xloc>624</xloc>
       <yloc>112</yloc>
       <attributes_kjc/>
     </entry>
@@ -461,7 +461,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>480</xloc>
+      <xloc>352</xloc>
       <yloc>112</yloc>
       <attributes_kjc/>
     </entry>
@@ -1639,15 +1639,6 @@
   <hops>
     <hop>
       <from>Start</from>
-      <to>Estados</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
-    <hop>
-      <from>Start</from>
       <to>Junta planilhas MG</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -1665,17 +1656,8 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Endereco municipio</from>
-      <to>raca cor</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
       <from>Inserindo identificador</from>
-      <to>Endereco municipio</to>
+      <to>Municipio</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -1793,15 +1775,6 @@
     <hop>
       <from>Pessoa GO</from>
       <to>Pessoa BA</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>Pessoa BA</from>
-      <to>Endereco residencia ES</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -1937,6 +1910,33 @@
     <hop>
       <from>Comobirdade GO</from>
       <to>Comobirdade BA</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Pessoa BA</from>
+      <to>Endereco residencia ES</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Municipio</from>
+      <to>Estados</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Estados</from>
+      <to>raca cor</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
