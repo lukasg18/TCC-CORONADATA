@@ -1,0 +1,6 @@
+Host: ec2-23-23-182-238.compute-1.amazonaws.com
+Database: d14efd4d1760eq
+User: ayvjsdexyiuvps
+Port: 5432
+Password: d70a30ed7494fdbd4dbf72a675ad878664f53f96c6bb3a613717f306551a29a2
+URI: postgres://ayvjsdexyiuvps:d70a30ed7494fdbd4dbf72a675ad878664f53f96c6bb3a613717f306551a29a2@ec2-23-23-182-238.compute-1.amazonaws.com:5432/d14efd4d1760eq

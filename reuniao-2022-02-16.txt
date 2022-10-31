@@ -1,0 +1,9 @@
+Necessidade de criar uma rlaçao de raça/cor com pessoa. Pois, em SP nao temos o dado raça/cor da pessoa
+
+Necessidade de criar tabelas separadas em TipoFatorRisco para atender separadamente as comobirdades
+
+Necessidade de criar uma tabela de PessoaInfectada e ligar evolução nela
+
+Retirar a tabela de teste e colocar uma coluna chamada classificação em teste/diagnostico como um boolean q diz se fez ou nao o teste
+
+discutir sobre a tabela tipo teste para recomendações futuras

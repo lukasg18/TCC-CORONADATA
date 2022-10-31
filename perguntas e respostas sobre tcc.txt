@@ -1,0 +1,36 @@
+qual  a taxa de mortalidade por sexo
+
+construir o ferramenteal de capturar dados da regiao sudeste
+
+
+ontolgia q represente o dominio de coranvirus q diz respeito de mortes e obitos
+
+---------------------------------
+nosso problema:
+- os dados sobre covid sao estruturados de forma diferente em cada estado
+- nao existe uma estrutura comum de dados entre os estados
+- falta de uma ferramenta global que apresente detalhes especificos de infectados por covid por estado/regiao.
+
+qual a solução ideal?
+- uma ferramenta que permite consultar/representar estes dados detalhados por estado/regiao
+- 
+
+Como posso resolver isso usando integração de dados?
+- Construir uma processo de ETL que pegue um arquivo csv com todas as informações brutas do site do ministerio da saude 
+dentro de uma pasta do sistema, efetue a limpeza das informações necessarias e realize o input dos dados limpos dentro de um
+banco de dados unificado baseado em uma ontologia.
+
+Como a solução sera usada em produção?
+- Gerar um Banco de dados OLTP e OLAP, contruir uma API que retorne os dados em formato JSON
+
+Como saberei que deu certo?
+- realizando consultas no banco e na api e conferindo se os resultados batem com os arquivos csv
+
+Quão fácil e achar os dados para essa solução? 
+- relativamente simples, quando os dados estao atualizados e disponiveis no site do ministerio da saude.
+
+------------------------------
+abstrair tabela pessoa infectada no modelo ER
+
+
+ 

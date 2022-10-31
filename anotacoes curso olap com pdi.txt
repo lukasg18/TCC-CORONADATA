@@ -1,0 +1,11 @@
+slow changing dimension tipo 2
+
+Quando eu tiver que fazer recargas do passado e eu quero que a minha dimensão se comporte como sendo Slowly Changing Dimension do Tipo 2, eu devo criar três campos auxiliares: um que é a versão daquele membro da dimensão, e o outro é uma data inicial e final de validade daquele membro. E aí, no momento que eu carregar na "fato", eu vou usar a data da "fato" com a data da validade da dimensão pra saber qual membro da dimensão eu vou carregar.
+
+Ok, existe um outro step específico para atualizar dimensões Slowly Changing Dimensions, do tipo 2, quando eu tenho o número da versão, data inicial e data final de validade do membro da dimensão. Eu vou procurar, aqui em Data Warehouse, o "Dimensional lookup/update", vou jogar ele pra cá. Vou também fazer um spoon aqui, e aqui eu vou chamar de "Atualiza Dimensão Data". Vou criar aqui a minha conexão "Teste de Lookups", vou achar a tabela, a tabela agora é a tabela de fato_data, opa, desculpe, não é "fato_data" não, tô lendo dimensão, é a "dim_pessoa_data" que vamos usar aqui.
+
+[13:32] Então vamos lá, aqui eu vou dizer quem é o critério de busca pra saber se o cara é um novo ou é um diferente. A chave é o código natural, é a matrícula do funcionário. Então eu vou dizer aqui que eu vou pegar o "Cod_Pessoa", que é o destino, e vou comparar com o código que tá chegando da leitura da planilha de Excel.
+
+[14:07] E eu tenho campos, que são os campos Desc_Pessoa e o campo Departamento, que eu vou comparar com o nome e o departamento que tá chegando lá da nossa tabela. E aqui eu tenho tipos de update, eu tenho sete tipos de update mas eu vou usar o Insert.
+
+[14:34] O que que o Insert diz? O Insert significa o seguinte: se ao ler novos dados, se ou o nome da pessoa mudar, ou o departamento da pessoa mudar, mas a matrícula é a mesma significa que características dela foram alteradas.
